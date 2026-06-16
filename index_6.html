@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jain Capital — Track Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#06080f;--s1:#0d1117;--s2:#141924;--s3:#1c2333;
+  --bo:rgba(255,255,255,.07);--bo2:rgba(255,255,255,.14);
+  --gd:#f0c040;--gd2:#d4a820;--gdim:rgba(240,192,64,.1);--gdim2:rgba(240,192,64,.05);
+  --gr:#22c55e;--grdim:rgba(34,197,94,.1);
+  --re:#f87171;--redim:rgba(248,113,113,.1);
+  --tx:#f1f5f9;--tx2:#94a3b8;--tx3:#4b5563;
+  --font:'Plus Jakarta Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--bg);color:var(--tx);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
+.o1{width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(240,192,64,.055),transparent 65%);animation:f1 14s ease-in-out infinite;}
+.o2{width:500px;height:500px;bottom:-150px;left:-150px;background:radial-gradient(circle,rgba(34,197,94,.045),transparent 65%);animation:f2 17s ease-in-out infinite;}
+@keyframes f1{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,30px)}}
+@keyframes f2{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-40px)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:13px 40px;background:rgba(6,8,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bo);}
+.logo{font-family:var(--font);font-weight:800;font-size:18px;color:var(--gd);letter-spacing:-.3px;}
+.logo span{color:var(--tx2);font-weight:500;font-size:13px;margin-left:3px;}
+.nav-r{display:flex;gap:8px;}
+.nb{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:var(--font);text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.nb-g{background:transparent;color:var(--tx2);border:1px solid var(--bo2);}
+.nb-g:hover{background:var(--s2);color:var(--tx);}
+.nb-gold{background:var(--gd);color:#000;font-weight:700;}
+.nb-gold:hover{background:var(--gd2);transform:translateY(-1px);}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 80px;text-align:center;}
+.eye{display:inline-flex;align-items:center;gap:8px;background:var(--gdim);border:1px solid rgba(240,192,64,.3);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gd);margin-bottom:26px;}
+.dot{width:7px;height:7px;background:var(--gr);border-radius:50%;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
+h1.hh{font-size:clamp(42px,6vw,76px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:18px;}
+.hl1{color:var(--tx);display:block;}
+.hl2{color:var(--gd);display:block;}
+.hs{font-size:17px;color:var(--tx2);max-width:540px;line-height:1.75;margin-bottom:36px;font-weight:400;}
+.hs strong{color:var(--tx);font-weight:600;}
+
+/* KPI STRIP */
+.kstrip{display:flex;background:var(--s2);border:1px solid var(--bo);border-radius:16px;overflow:hidden;margin-bottom:28px;flex-wrap:wrap;width:100%;max-width:960px;}
+.ki{padding:20px 22px;text-align:center;position:relative;flex:1;min-width:120px;}
+.ki:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:var(--bo);}
+.kv{font-size:28px;font-weight:800;line-height:1;display:block;}
+.kv.glow{animation:kglow 3s ease-in-out infinite;}
+@keyframes kglow{0%,100%{text-shadow:0 0 20px currentColor}50%{text-shadow:none}}
+.kl{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-top:5px;display:block;}
+.gd{color:var(--gd);}.gr{color:var(--gr);}.re{color:var(--re);}.wh{color:var(--tx);}
+
+/* QUICK NAV */
+.qnav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;}
+.qb{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--bo2);color:var(--tx2);background:var(--s2);transition:all .2s;font-family:var(--font);}
+.qb:hover,.qb.hot{border-color:rgba(240,192,64,.5);color:var(--gd);background:var(--gdim);}
+.qb.hot{animation:bp 2s ease infinite;}
+@keyframes bp{0%,100%{border-color:rgba(240,192,64,.4)}50%{border-color:var(--gd);box-shadow:0 0 12px rgba(240,192,64,.25)}}
+.badge{background:var(--gd);color:#000;border-radius:20px;padding:1px 8px;font-size:10px;font-weight:800;}
+
+/* BUTTONS */
+.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:var(--font);}
+.b-ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);color:#fff;}
+.b-ig:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 28px rgba(221,42,123,.4);}
+.b-wa{background:#25d366;color:#fff;}
+.b-wa:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.4);}
+.b-gold{background:var(--gd);color:#000;font-weight:700;}
+.b-gold:hover{background:var(--gd2);transform:translateY(-1px);}
+.b-outline{background:transparent;color:var(--tx2);border:1px solid var(--bo2);}
+.b-outline:hover{background:var(--s2);color:var(--tx);}
+
+/* TICKER */
+.ticker-wrap{position:relative;z-index:1;background:var(--s2);border-top:1px solid var(--bo);border-bottom:1px solid var(--bo);overflow:hidden;padding:9px 0;}
+.ticker-inner{display:flex;animation:tick 55s linear infinite;width:max-content;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:inline-flex;align-items:center;gap:10px;padding:0 20px;border-right:1px solid var(--bo);font-size:12px;white-space:nowrap;}
+.ti .ts{color:var(--tx);font-weight:700;}
+.ti .tp{font-weight:700;font-size:12px;}
+.ti .tp.up{color:var(--gr);}
+.ti .tp.dn{color:var(--re);}
+.ti .tc{font-size:10px;color:var(--tx3);}
+.ti a{text-decoration:none;color:inherit;}
+
+/* SECTION */
+.sec{position:relative;z-index:1;padding:0 40px 56px;}
+.si{max-width:1240px;margin:0 auto;}
+.st{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px;}
+.ss{color:var(--tx2);font-size:13px;margin-bottom:22px;font-weight:400;}
+.ag{color:var(--gd);}.agr{color:var(--gr);}.ar{color:var(--re);}
+
+/* HIGHLIGHT CARDS */
+.hlrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
+.hlc{border-radius:14px;padding:24px;text-align:center;position:relative;overflow:hidden;}
+.hlc::before{content:'';position:absolute;inset:0;opacity:.06;background:currentColor;}
+.hlc.wc{border:1px solid rgba(34,197,94,.35);color:var(--gr);}
+.hlc.bc{border:1px solid rgba(240,192,64,.45);color:var(--gd);}
+.hlc.lc{border:1px solid rgba(248,113,113,.35);color:var(--re);}
+.hlv{font-size:40px;font-weight:800;display:block;position:relative;z-index:1;}
+.hll{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px;opacity:.8;position:relative;z-index:1;}
+.hls{font-size:12px;opacity:.65;margin-top:4px;position:relative;z-index:1;font-weight:400;}
+
+/* PORTFOLIO CARDS */
+.phero{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.phc{background:var(--s1);border:1px solid var(--bo);border-radius:12px;padding:20px;text-align:center;}
+.phv{font-size:22px;font-weight:800;display:block;}
+.phl{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-top:4px;font-weight:600;}
+.phs{font-size:11px;color:var(--tx2);margin-top:4px;}
+.bup{display:inline-block;background:var(--grdim);color:var(--gr);border:1px solid rgba(34,197,94,.2);border-radius:20px;padding:2px 10px;font-size:11px;font-weight:700;margin-top:6px;}
+.bdn{display:inline-block;background:var(--redim);color:var(--re);border:1px solid rgba(248,113,113,.2);border-radius:20px;padding:2px 10px;font-size:11px;font-weight:700;margin-top:6px;}
+
+/* CHARTS */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;}
+.cbox{background:var(--s1);border:1px solid var(--bo);border-radius:14px;padding:22px;}
+.ctitle{font-size:14px;font-weight:700;margin-bottom:3px;}
+.csub{font-size:11px;color:var(--tx3);margin-bottom:16px;font-weight:400;}
+
+/* REVIEWS */
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:24px;}
+.rv-card{background:var(--s1);border:1px solid var(--bo);border-radius:14px;padding:20px;transition:border-color .2s;}
+.rv-card:hover{border-color:var(--bo2);}
+.rv-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.rv-name{font-weight:700;font-size:14px;}
+.rv-stars{font-size:13px;letter-spacing:1px;}
+.rv-text{font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:8px;font-weight:400;}
+.rv-trade{font-size:11px;color:var(--gr);font-weight:700;}
+.rv-date{font-size:10px;color:var(--tx3);margin-top:6px;}
+.rv-del{display:none;font-size:10px;background:var(--redim);color:var(--re);border:1px solid rgba(248,113,113,.2);border-radius:6px;padding:2px 8px;cursor:pointer;font-family:var(--font);margin-left:6px;}
+body.admin .rv-del{display:inline-block;}
+.star-pick{display:flex;gap:6px;margin-top:4px;}
+.star{font-size:22px;cursor:pointer;transition:all .15s;user-select:none;opacity:.3;}
+.star.on{opacity:1;transform:scale(1.1);}
+textarea.uin{resize:vertical;}
+
+/* PASSWORD MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-bg.open{opacity:1;pointer-events:all;}
+.modal{background:var(--s1);border:1px solid rgba(240,192,64,.3);border-radius:20px;padding:36px 40px;text-align:center;max-width:440px;width:90%;box-shadow:0 40px 100px rgba(0,0,0,.8);transform:scale(.95) translateY(10px);transition:transform .3s;}
+.modal-bg.open .modal{transform:scale(1) translateY(0);}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--tx3);font-size:22px;cursor:pointer;line-height:1;font-family:var(--font);}
+.lring{width:60px;height:60px;border-radius:50%;background:var(--gdim);border:2px solid rgba(240,192,64,.3);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px;}
+.modal h3{font-size:20px;font-weight:800;margin-bottom:8px;}
+.modal p{color:var(--tx2);font-size:12.5px;line-height:1.6;margin-bottom:16px;font-weight:400;}
+.lcnt{background:var(--gdim);border:1px solid rgba(240,192,64,.2);border-radius:10px;padding:10px 20px;margin-bottom:16px;}
+.lcnt .big{font-size:32px;font-weight:800;color:var(--gd);display:block;line-height:1;}
+.lcnt .sm{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.pbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.uarea{border-top:1px solid var(--bo);padding-top:14px;}
+.urow{display:flex;gap:8px;margin-bottom:8px;}
+.uin{background:var(--s3);border:1px solid var(--bo2);border-radius:8px;padding:10px 14px;color:var(--tx);font-size:13px;font-family:var(--font);outline:none;width:100%;font-weight:400;}
+.uin:focus{border-color:var(--gd);}
+.uin::placeholder{color:var(--tx3);}
+.ubtn{background:var(--gd);color:#000;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--font);white-space:nowrap;}
+.ubtn:hover{background:var(--gd2);}
+.uhint{font-size:10px;color:var(--tx3);text-align:center;font-weight:400;}
+.uerr{font-size:12px;color:var(--re);margin-top:6px;text-align:center;display:none;font-weight:500;}
+
+/* LOCK TEASER */
+.lock-teaser{background:linear-gradient(135deg,var(--s2),var(--gdim2));border:1px solid rgba(240,192,64,.25);border-radius:18px;overflow:hidden;}
+.teaser-blur{max-height:290px;overflow:hidden;position:relative;}
+.teaser-blur table{filter:blur(2px);opacity:.95;}
+.teaser-blur::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,15,0) 0%,rgba(6,8,15,.88) 80%);}
+.teaser-cta{padding:20px 24px;text-align:center;position:relative;}
+.teaser-cta p{font-size:13px;color:var(--tx2);margin-bottom:14px;font-weight:400;}
+
+/* UNLOCKED */
+#openSection{display:none;}
+#openSection.vis{display:block;margin-top:16px;}
+.live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:700;color:var(--gr);}
+.live-badge .ldot{width:6px;height:6px;background:var(--gr);border-radius:50%;animation:pulse 1.5s ease infinite;}
+.refresh-bar{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--tx3);}
+.rdot{width:6px;height:6px;background:var(--gr);border-radius:50%;animation:pulse 2s ease infinite;}
+
+/* TABLES */
+.twrap{background:var(--s1);border:1px solid var(--bo);border-radius:14px;overflow:hidden;}
+.thdr{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 12px;border-bottom:1px solid var(--bo);flex-wrap:wrap;gap:8px;}
+.tmeta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.tag{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;}
+.tw{background:var(--grdim);color:var(--gr);border:1px solid rgba(34,197,94,.2);}
+.tl{background:var(--redim);color:var(--re);border:1px solid rgba(248,113,113,.2);}
+.to{background:var(--gdim);color:var(--gd);border:1px solid rgba(240,192,64,.2);}
+.fil{display:flex;gap:6px;flex-wrap:wrap;}
+.fb{padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;background:var(--s2);color:var(--tx2);border:1px solid var(--bo);cursor:pointer;transition:all .15s;font-family:var(--font);}
+.fb:hover,.fb.active{background:var(--s3);color:var(--tx);border-color:var(--bo2);}
+.tscroll{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;}
+thead th{padding:9px 14px;text-align:left;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);background:var(--s2);border-bottom:1px solid var(--bo);white-space:nowrap;}
+tbody tr{border-bottom:1px solid var(--bo);transition:background .12s;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.025);}
+td{padding:10px 14px;font-size:12.5px;vertical-align:middle;}
+.sc .sym{font-weight:700;font-size:13px;}
+.sc .sym a{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.15);}
+.sc .sym a:hover{color:var(--gd);border-bottom-color:var(--gd);}
+.sc .co{font-size:10px;color:var(--tx3);margin-top:1px;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sc .nt{font-size:9.5px;color:var(--tx3);font-style:italic;margin-top:1px;}
+.spill{display:inline-block;font-size:9.5px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);}
+.tbg{display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;padding:3px 10px;border-radius:20px;color:#000;min-width:34px;}
+.tT1{background:#22c55e;}.tT2{background:#16a34a;}.tT3{background:#15803d;color:#a7f3d0;}.tSL{background:#ef4444;color:#fff;}
+.pn{text-align:right;}
+.pv{font-weight:800;font-size:13px;display:block;}
+.pbg{height:3px;border-radius:2px;margin-top:4px;background:var(--s3);}
+.pb{height:3px;border-radius:2px;}
+.pu .pv{color:var(--gr);}.pu .pb{background:linear-gradient(90deg,#16a34a,#22c55e);}
+.pd .pv{color:var(--re);}.pd .pb{background:linear-gradient(90deg,#dc2626,#f87171);}
+.dc{font-size:10px;color:var(--tx3);white-space:nowrap;}
+.dc.ex{color:var(--gr);}.dc.exl{color:var(--re);}
+.pc{font-size:12px;color:var(--tx2);font-weight:500;}
+
+/* LIVE STATUS BADGE in open trades */
+.ls-up{color:var(--gr);font-size:11px;font-weight:700;}
+.ls-dn{color:var(--re);font-size:11px;font-weight:700;}
+.ls-neu{color:var(--tx3);font-size:11px;}
+.ls-loading{color:var(--tx3);font-size:10px;}
+
+/* ACCESS SECTION */
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ac{background:var(--s1);border:1px solid var(--bo);border-radius:14px;padding:24px;}
+.ac h4{font-size:15px;font-weight:700;margin-bottom:8px;}
+.ac p{font-size:12.5px;color:var(--tx2);line-height:1.6;margin-bottom:12px;font-weight:400;}
+.step{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.snum{width:24px;height:24px;border-radius:50%;background:var(--gdim);border:1px solid rgba(240,192,64,.3);color:var(--gd);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step p{font-size:12px;color:var(--tx2);line-height:1.5;margin:0;font-weight:400;}
+
+/* TRANSPARENCY */
+.transp{background:var(--s2);border:1px solid var(--bo);border-radius:14px;padding:22px 26px;display:flex;gap:16px;align-items:flex-start;}
+.transp h4{font-size:14px;font-weight:700;margin-bottom:4px;}
+.transp p{font-size:12.5px;color:var(--tx2);line-height:1.65;font-weight:400;}
+
+/* AUTO-UPDATE GUIDE */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.guide-card{background:var(--s1);border:1px solid var(--bo);border-radius:14px;padding:22px;}
+.guide-card h4{font-size:14px;font-weight:700;margin-bottom:10px;}
+.guide-step{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start;}
+.gs-num{width:20px;height:20px;border-radius:50%;background:var(--gdim);color:var(--gd);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.guide-step p{font-size:12px;color:var(--tx2);line-height:1.5;margin:0;font-weight:400;}
+code{background:var(--s3);border:1px solid var(--bo2);border-radius:4px;padding:1px 6px;font-size:11px;color:var(--gd);font-family:monospace;}
+
+/* CTA BLOCK */
+.ctablock{background:linear-gradient(135deg,var(--s2),rgba(240,192,64,.04));border:1px solid rgba(240,192,64,.2);border-radius:18px;padding:44px;text-align:center;}
+.ctablock h2{font-size:26px;font-weight:800;margin-bottom:10px;}
+.ctablock p{color:var(--tx2);font-size:14px;max-width:440px;margin:0 auto 26px;line-height:1.7;font-weight:400;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;z-index:1000;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:700;transform:translateY(70px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.ok{background:var(--gr);color:#000;}
+.toast.err{background:var(--re);color:#fff;}
+.toast.info{background:var(--s3);color:var(--tx);border:1px solid var(--bo2);}
+
+/* NETLIFY FORM (hidden — for real backend reviews) */
+.netlify-form{display:none;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.rv.vis{opacity:1;transform:translateY(0);}
+
+footer{position:relative;z-index:1;border-top:1px solid var(--bo);padding:24px 40px;text-align:center;color:var(--tx3);font-size:11px;line-height:1.8;}
+footer a{color:var(--tx2);text-decoration:none;}
+footer a:hover{color:var(--gd);}
+
+@media(max-width:768px){
+  nav{padding:12px 16px;}
+  .hero{padding:100px 16px 60px;}
+  .kstrip{flex-wrap:wrap;}.ki{min-width:calc(50% - 1px);}
+  .sec{padding:0 16px 44px;}
+  .cgrid,.hlrow,.phero,.agrid,.guide-grid{grid-template-columns:1fr;}
+  .modal{padding:28px 20px;margin:0 16px;}
+  thead th:nth-child(4),td:nth-child(4),thead th:nth-child(5),td:nth-child(5){display:none;}
+}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+
+<!-- NETLIFY FORM BACKEND for reviews (hidden but real — gives you a dashboard at netlify.com) -->
+<form name="reviews" netlify netlify-honeypot="bot-field" class="netlify-form">
+  <input type="hidden" name="form-name" value="reviews">
+  <input name="reviewer-name"><input name="rating"><textarea name="review"></textarea><input name="best-trade">
+</form>
+
+<!-- PASSWORD MODAL -->
+<div class="modal-bg" id="pwModal">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="lring">🔐</div>
+    <h3>Unlock Live Trades</h3>
+    <div class="lcnt">
+      <span class="big" id="modal-count">40</span>
+      <span class="sm">Active Positions Right Now</span>
+    </div>
+    <p>Enter your premium password for instant access to all live trades with entries, targets &amp; stop-loss.</p>
+    <div class="pbtns">
+      <a href="https://www.instagram.com/piyansjain_" target="_blank" class="btn b-ig" style="font-size:12.5px;padding:10px 18px;">📸 DM for Access</a>
+      <a href="https://wa.me/?text=Hi%20Piyans!%20I%20want%20Premium%20access!" target="_blank" class="btn b-wa" style="font-size:12.5px;padding:10px 18px;">💬 WhatsApp</a>
+    </div>
+    <div class="uarea">
+      <div class="urow">
+        <input type="password" class="uin" id="pwIn" placeholder="Enter your premium password…" autocomplete="off">
+        <button class="ubtn" onclick="tryUnlock()">Unlock</button>
+      </div>
+      <div class="uhint">One device per password · Password from Piyans only</div>
+      <div class="uerr" id="uErr">❌ Wrong password or already used on another device. DM @piyansjain_</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Jain Capital <span>/ Track Record</span></div>
+  <div class="nav-r">
+    <a href="https://www.instagram.com/piyansjain_" target="_blank" class="nb nb-g">📸 Instagram</a>
+    <a href="https://wa.me/?text=Hi%20Piyans!%20I%20want%20Premium%20access!" target="_blank" class="nb nb-gold">💬 Get Premium</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eye"><span class="dot"></span>Live Track Record &nbsp;·&nbsp; NSE / BSE</div>
+  <h1 class="hh"><span class="hl1">Real Calls.</span><span class="hl2">Real Returns.</span></h1>
+  <p class="hs">Every entry, every exit, every stop-loss shown. <strong>Nothing hidden. Nothing cherry-picked.</strong></p>
+  <div class="kstrip">
+    <div class="ki"><span class="kv wh glow" id="k-total">151</span><span class="kl">Total Calls</span></div>
+    <div class="ki"><span class="kv gr glow" id="k-wins">86</span><span class="kl">Winners ✅</span></div>
+    <div class="ki"><span class="kv re" id="k-losses">25</span><span class="kl">Stop Losses</span></div>
+    <div class="ki"><span class="kv gd glow" id="k-wr">77.5%</span><span class="kl">Win Rate</span></div>
+    <div class="ki"><span class="kv gr" id="k-avgw">+24.0%</span><span class="kl">Avg Win</span></div>
+    <div class="ki"><span class="kv gd glow" id="k-best">+165.3%</span><span class="kl">Best Call 🏆</span></div>
+  </div>
+  <div class="qnav">
+    <a href="#" class="qb hot" onclick="openModal();return false;">🔐 Live Trades <span class="badge" id="qb-opens">40</span></a>
+    <a href="#perf-sec" class="qb">📊 Performance</a>
+    <a href="#wins-sec" class="qb">✅ 84 Wins</a>
+    <a href="#reviews-sec" class="qb">⭐ Reviews</a>
+    <a href="#access-sec" class="qb">🔑 Get Access</a>
+    
+  </div>
+  <div class="ctas">
+    <a href="https://www.instagram.com/piyansjain_" target="_blank" class="btn b-ig">📸 Follow on Instagram</a>
+    <a href="https://wa.me/?text=Hi%20Piyans!%20I%20saw%20your%20track%20record%20and%20want%20Premium%20access!" target="_blank" class="btn b-wa">💬 WhatsApp for Premium</a>
+  </div>
+</div>
+
+<!-- TICKER with live % change -->
+<div class="ticker-wrap"><div class="ticker-inner" id="tickerEl"></div></div>
+
+<!-- ══ REVIEWS — RIGHT AFTER TICKER ══ -->
+<div class="sec rv" id="reviews-sec" style="padding-top:60px;">
+<div class="si">
+  <div class="st">⭐ <span class="ag">Member Reviews</span></div>
+  <div class="ss">What premium members say. Add yours below — visible to everyone instantly.</div>
+  <div class="rv-grid" id="reviewsGrid"></div>
+
+  <div class="cbox">
+    <div class="ctitle" style="margin-bottom:4px;">✍️ Leave a Review</div>
+    <div style="font-size:12px;color:var(--tx3);margin-bottom:16px;">Your review appears immediately for all visitors on this site.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+      <div>
+        <div style="font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600;">Your Name</div>
+        <input id="rv-name" class="uin" placeholder="e.g. Rahul S.">
+      </div>
+      <div>
+        <div style="font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600;">Rating</div>
+        <div class="star-pick" id="starPicker">
+          <span class="star" onclick="setStar(1)">⭐</span><span class="star" onclick="setStar(2)">⭐</span>
+          <span class="star" onclick="setStar(3)">⭐</span><span class="star" onclick="setStar(4)">⭐</span>
+          <span class="star" onclick="setStar(5)">⭐</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:12px;">
+      <div style="font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600;">Your Review</div>
+      <textarea id="rv-text" class="uin" rows="3" placeholder="Share your experience with Jain Capital…"></textarea>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600;">Best trade you followed? (optional)</div>
+      <input id="rv-trade" class="uin" placeholder="e.g. MTAR Tech +165%">
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <button class="btn b-gold" style="flex:1;justify-content:center;min-width:200px;" onclick="submitReview()">Submit Review ✨</button>
+      <button class="btn b-outline" style="padding:13px 16px;font-size:11px;" onclick="toggleAdminPanel()" title="Admin">⚙️ Admin</button>
+    </div>
+    <div id="rv-ok" style="display:none;margin-top:10px;text-align:center;color:var(--gr);font-size:13px;font-weight:600;">✅ Review submitted! Thank you — visible to all visitors now.</div>
+    <div id="rv-err" style="display:none;margin-top:10px;text-align:center;color:var(--re);font-size:13px;">Please fill in name, rating and review.</div>
+    <div id="admin-panel" style="display:none;margin-top:16px;padding-top:14px;border-top:1px solid var(--bo);">
+      <div style="font-size:11px;color:var(--tx3);margin-bottom:8px;">Admin mode — enter password to show delete buttons</div>
+      <div class="urow"><input type="password" id="admin-pw" class="uin" placeholder="Admin password…"><button class="ubtn" onclick="checkAdmin()">Enter</button></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══ LIVE OPEN TRADES ══ -->
+<div class="sec" id="live-sec" style="padding-top:48px;">
+<div class="si">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:4px;flex-wrap:wrap;">
+    <div class="st">🔐 <span class="ag">Live Open Trades</span></div>
+    <div class="live-badge"><span class="ldot"></span><span id="open-badge">40 Active</span></div>
+  </div>
+  <div class="ss">40 active positions — entries, targets &amp; stop-loss visible to premium members</div>
+
+  <div class="lock-teaser" id="lockTeaser">
+    <div class="teaser-blur">
+      <table><thead><tr><th>#</th><th>Stock</th><th>Sector</th><th>Entry Date</th><th>Entry ₹</th><th>T1 ₹</th><th>T2 ₹</th><th>T3 ₹</th><th>SL ₹</th><th>Live %</th></tr></thead>
+      <tbody id="blurRows"></tbody></table>
+    </div>
+    <div class="teaser-cta">
+      <p>🔒 Entry prices, targets &amp; stop-loss are blurred — unlock with your premium password to see all 40 live trades</p>
+      <button class="btn b-gold" style="font-size:14px;padding:14px 32px;" onclick="openModal()">🔐 Enter Password to Unlock Live Trades</button>
+    </div>
+  </div>
+
+  <div id="openSection">
+    <div class="twrap">
+      <div class="thdr">
+        <div class="tmeta">
+          <span class="tag to" id="open-tag">40 Active</span>
+          <div class="refresh-bar"><span class="rdot"></span><span id="refresh-lbl">Prices refresh every 30s</span></div>
+        </div>
+        <button class="btn b-outline" style="font-size:12px;padding:7px 14px;" onclick="doLock()">🔒 Lock</button>
+      </div>
+      <div class="tscroll">
+        <table><thead><tr>
+          <th>#</th><th>Stock</th><th>Sector</th><th>Entry Date</th><th>Entry ₹</th>
+          <th>T1 ₹</th><th>T2 ₹</th><th>T3 ₹</th><th>SL ₹</th>
+          <th>Days</th><th>Live CMP</th><th>Live %</th>
+        </tr></thead>
+        <tbody id="openBody"></tbody></table>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══ PERFORMANCE ══ -->
+<div class="sec rv" id="perf-sec" style="padding-top:56px;">
+<div class="si">
+  <div class="st" style="margin-bottom:20px;">📊 <span class="ag">Performance</span></div>
+  <div class="hlrow rv">
+    <div class="hlc wc"><span class="hlv" id="hl-w">86</span><div class="hll">Winning Calls</div><div class="hls">77.5% win rate · avg +24.0%</div></div>
+    <div class="hlc bc"><span class="hlv">+165.3%</span><div class="hll">Best Single Call 🏆</div><div class="hls">MTARTECH · T3 target hit</div></div>
+    <div class="hlc lc"><span class="hlv" id="hl-l">25</span><div class="hll">Stop Loss Exits</div><div class="hls">Avg -4.3% · capped at SL price</div></div>
+  </div>
+  <div class="phero rv">
+    <div class="phc"><span class="phv wh">₹10,00,000</span><div class="phl">Starting Capital</div><div class="phs">Sep 2024 · 5% per trade</div></div>
+    <div class="phc"><span class="phv gr" id="pf-v">₹2,629,419</span><div class="phl">Our Portfolio Value</div><span class="bup" id="pf-r">+162.9%</span></div>
+    <div class="phc"><span class="phv re">₹9,57,513</span><div class="phl">Nifty 50 Same Period</div><span class="bdn">-4.2%</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px;" class="rv">
+    <div class="phc"><span class="phv gr" id="pf-p">+₹1,629,419</span><div class="phl">Total Profit Booked</div></div>
+    <div class="phc"><span class="phv gd" id="pf-e">+₹1,659,888</span><div class="phl">Extra vs Nifty</div><div class="phs">Nifty lost 4.2% — we returned +162.9%</div></div>
+    <div class="phc"><span class="phv wh">109</span><div class="phl">Closed Trades</div><div class="phs">86 wins · 25 SL exits</div></div>
+  </div>
+  <div class="cgrid rv">
+    <div class="cbox">
+      <div class="ctitle">📈 Portfolio vs Nifty 50</div>
+      <div class="csub">Month-by-month ₹ value of ₹10L invested</div>
+      <canvas id="portChart" height="220"></canvas>
+    </div>
+    <div class="cbox">
+      <div class="ctitle">🎯 All 109 Closed Trades — Where They Landed</div>
+      <div class="csub">T1 / T2 / T3 hits + Stop Loss exits</div>
+      <canvas id="outcomeChart" height="220"></canvas>
+    </div>
+  </div>
+  <div class="cbox rv" style="margin-bottom:20px;">
+    <div class="ctitle">🔄 Trade-by-Trade Portfolio Journey</div>
+    <div class="csub">Every exit plotted · 🟢 Win · 🔴 SL exit · Hover any dot for full P&amp;L details</div>
+    <canvas id="evtChart" height="145"></canvas>
+  </div>
+  <div class="cgrid rv">
+    <div class="cbox">
+      <div class="ctitle">🏭 Wins vs Losses by Sector</div>
+      <div class="csub">Top 10 sectors by trade volume</div>
+      <canvas id="secChart" height="240"></canvas>
+    </div>
+    <div class="cbox">
+      <div class="ctitle">📅 Monthly Activity</div>
+      <div class="csub">Trades closed each month</div>
+      <canvas id="monthChart" height="240"></canvas>
+    </div>
+  </div>
+</div></div>
+
+<!-- TRANSPARENCY -->
+<div class="sec rv">
+<div class="si">
+  <div class="transp">
+    <div style="font-size:24px;flex-shrink:0;">🪞</div>
+    <div>
+      <h4>100% Transparent. Losses shown too.</h4>
+      <p>Every call shown with entry date, exit date and exact return %. SL % capped at SL exit price — not live CMP. Win % locked at moment target was hit and never reverses. ₹10L sim deploys 5% of current portfolio per trade — compounds as portfolio grows. Every stock links to Screener.in for full due diligence.</p>
+    </div>
+  </div>
+</div></div>
+
+<!-- WINS TABLE -->
+<div class="sec rv" id="wins-sec">
+<div class="si">
+  <div class="st" style="margin-bottom:4px;">✅ <span class="agr">86 Winning Calls</span></div>
+  <div class="ss">% locked at exact target hit price · Entry &amp; exit dates shown · Click any stock → Screener.in full analysis</div>
+  <div class="twrap">
+    <div class="thdr">
+      <div class="tmeta"><span class="tag tw" id="wins-tag">86 Winners</span></div>
+      <div class="fil">
+        <button class="fb active" onclick="fw('all',this)">All</button>
+        <button class="fb" onclick="fw('T3',this)">T3 🏆</button>
+        <button class="fb" onclick="fw('T2',this)">T2</button>
+        <button class="fb" onclick="fw('T1',this)">T1</button>
+      </div>
+    </div>
+    <div class="tscroll">
+      <table><thead><tr>
+        <th>#</th><th>Stock</th><th>Sector</th><th>Entry Date</th><th>Exit Date</th>
+        <th>Entry ₹</th><th>Exit ₹</th><th>Target</th><th style="text-align:right">Return %</th>
+      </tr></thead>
+      <tbody id="winsBody"></tbody></table>
+    </div>
+  </div>
+</div></div>
+
+<!-- LOSSES TABLE -->
+<div class="sec rv">
+<div class="si">
+  <div class="st" style="margin-bottom:4px;">❌ <span class="ar">25 Stop Loss Exits</span></div>
+  <div class="ss">Loss % capped at SL exit price — not live CMP. Fully transparent.</div>
+  <div class="twrap">
+    <div class="thdr"><div class="tmeta"><span class="tag tl" id="loss-tag">25 SL Exits</span></div></div>
+    <div class="tscroll">
+      <table><thead><tr>
+        <th>#</th><th>Stock</th><th>Sector</th><th>Entry Date</th><th>Exit Date</th>
+        <th>Entry ₹</th><th>SL Exit ₹</th><th>SL</th><th style="text-align:right">Loss %</th>
+      </tr></thead>
+      <tbody id="lossBody"></tbody></table>
+    </div>
+  </div>
+</div></div>
+
+<!-- HOW TO ACCESS -->
+<div class="sec rv" id="access-sec">
+<div class="si">
+  <div class="st" style="margin-bottom:4px;">🔑 <span class="ag">How to Get Access</span></div>
+  <div class="ss">Two ways to see all 40 live open trades</div>
+  <div class="agrid">
+    <div class="ac">
+      <h4>📸 Instagram / WhatsApp (Easiest)</h4>
+      <p>DM me — once you join I send your personal password. Enter it at the 🔐 button. One device per password.</p>
+      <div class="step"><div class="snum">1</div><p>DM <strong>@piyansjain_</strong> on Instagram or WhatsApp</p></div>
+      <div class="step"><div class="snum">2</div><p>I send your <strong>personal password</strong> — unique to you</p></div>
+      <div class="step"><div class="snum">3</div><p>Click 🔐 button → enter password → <strong>instant access</strong></p></div>
+      <div class="step"><div class="snum">4</div><p>Works on <strong>1 device only</strong> — DM me to reset if you change devices</p></div>
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <a href="https://www.instagram.com/piyansjain_" target="_blank" class="btn b-ig" style="font-size:12.5px;padding:10px 18px;flex:1;justify-content:center;">📸 Instagram</a>
+        <a href="https://wa.me/?text=Hi%20Piyans!%20I%20want%20Premium!" target="_blank" class="btn b-wa" style="font-size:12.5px;padding:10px 18px;flex:1;justify-content:center;">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="ac">
+      <h4>📊 Google Sheet (View Only)</h4>
+      <p>Live spreadsheet with GOOGLEFINANCE prices — auto-updates every 15 min. Share your Gmail with me.</p>
+      <div class="step"><div class="snum">1</div><p>Share your <strong>Gmail address</strong> with me via DM</p></div>
+      <div class="step"><div class="snum">2</div><p>I add you as <strong>Viewer only</strong> — see everything, edit nothing</p></div>
+      <div class="step"><div class="snum">3</div><p>Live prices via <strong>GOOGLEFINANCE</strong>, auto-refresh every 15 min</p></div>
+      <div style="margin-top:14px;background:var(--gdim);border:1px solid rgba(240,192,64,.2);border-radius:10px;padding:12px 16px;font-size:12px;color:var(--tx2);line-height:1.6;">
+        I can revoke instantly. You get <strong style="color:var(--gd)">read-only</strong> — no editing, no downloads of formulas possible.
+      </div>
+    </div>
+  </div>
+</div></div>
+
+
+<!-- BOTTOM CTA -->
+<div class="sec rv">
+<div class="si">
+  <div class="ctablock">
+    <div style="font-size:36px;margin-bottom:14px;">📈</div>
+    <h2>Ready to join?</h2>
+    <p>Get all 40 live positions with exact entries, targets &amp; stop-loss. Real-time alerts via Instagram &amp; WhatsApp.</p>
+    <div class="ctas">
+      <a href="https://www.instagram.com/piyansjain_" target="_blank" class="btn b-ig">📸 DM on Instagram</a>
+      <a href="https://wa.me/?text=Hi%20Piyans!%20I%20want%20Premium%20access!" target="_blank" class="btn b-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+</div></div>
+
+<footer>
+  <div style="max-width:800px;margin:0 auto;">
+    <div style="margin-bottom:7px;"><strong style="color:var(--tx2)">Jain Capital</strong> &nbsp;·&nbsp; <a href="https://www.instagram.com/piyansjain_" target="_blank">@piyansjain_</a> &nbsp;·&nbsp; <a href="https://jaincapital.netlify.app">Instagram: @piyansjain_</a></div>
+    <div>⚠️ For educational &amp; informational purposes only. Not SEBI-registered investment advice. Past performance does not guarantee future results.</div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+// ════════ DATA ════════
+const WINS   = [{"row": 8, "sym": "SUNPHARMA", "co": "Sun Pharma", "dt_str": "30 Oct 2024", "exit_str": "29 Nov 2024", "dt": "2024-10-30", "blo": 1680.0, "t1": 1780.0, "t2": 1850.0, "t3": 1950.0, "sl": 1640.0, "res": "WIN", "btgt": "T1", "pct": 0.059524, "exit_price": 1780.0, "days_held": 30, "sec": "Pharma", "notes": "US generics", "screener": "https://www.screener.in/company/SUNPHARMA/"}, {"row": 9, "sym": "PNBHOUSING", "co": "PNB HOUSING", "dt_str": "23 Oct 2025", "exit_str": "22 Dec 2025", "dt": "2025-10-23", "blo": 900.0, "t1": 950.0, "t2": 1000.0, "t3": 1089.0, "sl": 800.0, "res": "WIN", "btgt": "T3", "pct": 0.21, "exit_price": 1089.0, "days_held": 60, "sec": "NBFC", "notes": "Housing demand", "screener": "https://www.screener.in/company/PNBHOUSING/"}, {"row": 10, "sym": "CREDITACC", "co": "CREDIT ACCESS", "dt_str": "24 Oct 2025", "exit_str": "23 Nov 2025", "dt": "2025-10-24", "blo": 1400.0, "t1": 1497.0, "t2": 1550.0, "t3": 1600.0, "sl": 1250.0, "res": "WIN", "btgt": "T1", "pct": 0.069286, "exit_price": 1497.0, "days_held": 30, "sec": "NBFC", "notes": "Microfinance", "screener": "https://www.screener.in/company/CREDITACC/"}, {"row": 11, "sym": "HINDALCO", "co": "HINDALCO", "dt_str": "24 Oct 2025", "exit_str": "23 Dec 2025", "dt": "2025-10-24", "blo": 800.0, "t1": 925.0, "t2": 1000.0, "t3": 1044.0, "sl": 750.0, "res": "WIN", "btgt": "T3", "pct": 0.305, "exit_price": 1044.0, "days_held": 60, "sec": "Metals", "notes": "Aluminium upcycle", "screener": "https://www.screener.in/company/HINDALCO/"}, {"row": 12, "sym": "SHANTIGOLD", "co": "SHANTI GOLD", "dt_str": "24 Oct 2025", "exit_str": "23 Nov 2025", "dt": "2025-10-24", "blo": 200.0, "t1": 225.0, "t2": 250.0, "t3": 275.0, "sl": 175.0, "res": "WIN", "btgt": "T1", "pct": 0.125, "exit_price": 225.0, "days_held": 30, "sec": "Metals", "notes": "Gold jewellery", "screener": "https://www.screener.in/company/SHANTIGOLD/"}, {"row": 14, "sym": "UJJIVANSFB", "co": "UJJIVAN SFB", "dt_str": "27 Oct 2025", "exit_str": "26 Dec 2025", "dt": "2025-10-27", "blo": 50.0, "t1": 55.0, "t2": 60.0, "t3": 62.4, "sl": 45.0, "res": "WIN", "btgt": "T3", "pct": 0.248, "exit_price": 62.4, "days_held": 60, "sec": "Banking", "notes": "SFB growth", "screener": "https://www.screener.in/company/UJJIVANSFB/"}, {"row": 16, "sym": "BHARATWIRE", "co": "BHARAT WIRE ROPES", "dt_str": "28 Oct 2025", "exit_str": "12 Dec 2025", "dt": "2025-10-28", "blo": 200.0, "t1": 225.0, "t2": 250.0, "t3": 260.0, "sl": 175.0, "res": "WIN", "btgt": "T2", "pct": 0.25, "exit_price": 250.0, "days_held": 45, "sec": "Metals", "notes": "Wire demand", "screener": "https://www.screener.in/company/BHARATWIRE/"}, {"row": 17, "sym": "AEROFLEX", "co": "AEROFLEX", "dt_str": "28 Oct 2025", "exit_str": "27 Dec 2025", "dt": "2025-10-28", "blo": 178.0, "t1": 200.0, "t2": 300.0, "t3": 421.0, "sl": 150.0, "res": "WIN", "btgt": "T3", "pct": 1.365169, "exit_price": 421.0, "days_held": 60, "sec": "Industrials", "notes": "Flexible hose export", "screener": "https://www.screener.in/company/AEROFLEX/"}, {"row": 18, "sym": "ELGIEQUIP", "co": "ELGI EQUIPMENT", "dt_str": "29 Oct 2025", "exit_str": "13 Dec 2025", "dt": "2025-10-29", "blo": 490.0, "t1": 525.0, "t2": 560.7, "t3": 600.0, "sl": 450.0, "res": "WIN", "btgt": "T2", "pct": 0.144286, "exit_price": 560.7, "days_held": 45, "sec": "Industrials", "notes": "Compressor demand", "screener": "https://www.screener.in/company/ELGIEQUIP/"}, {"row": 22, "sym": "NOCIL", "co": "NOCIL", "dt_str": "30 Oct 2025", "exit_str": "29 Nov 2025", "dt": "2025-10-30", "blo": 170.0, "t1": 180.0, "t2": 185.0, "t3": 200.0, "sl": 160.0, "res": "WIN", "btgt": "T1", "pct": 0.058824, "exit_price": 180.0, "days_held": 30, "sec": "Chemicals", "notes": "Rubber chemicals", "screener": "https://www.screener.in/company/NOCIL/"}, {"row": 24, "sym": "BSE", "co": "BSE Ltd", "dt_str": "03 Nov 2025", "exit_str": "02 Jan 2026", "dt": "2025-11-03", "blo": 2500.0, "t1": 2750.0, "t2": 3000.0, "t3": 3905.0, "sl": 225.0, "res": "WIN", "btgt": "T3", "pct": 0.562, "exit_price": 3905.0, "days_held": 60, "sec": "Finance", "notes": "Exchange volumes", "screener": "https://www.screener.in/company/BSE/"}, {"row": 25, "sym": "MRPL", "co": "MRPL", "dt_str": "04 Nov 2025", "exit_str": "04 Dec 2025", "dt": "2025-11-04", "blo": 140.0, "t1": 167.0, "t2": 180.0, "t3": 190.0, "sl": 125.0, "res": "WIN", "btgt": "T1", "pct": 0.192857, "exit_price": 167.0, "days_held": 30, "sec": "Energy", "notes": "Refining margins", "screener": "https://www.screener.in/company/MRPL/"}, {"row": 28, "sym": "RATNAVEER", "co": "RATNAVEER", "dt_str": "11 Nov 2025", "exit_str": "11 Dec 2025", "dt": "2025-11-11", "blo": 150.0, "t1": 175.0, "t2": 180.0, "t3": 190.0, "sl": 135.0, "res": "WIN", "btgt": "T1", "pct": 0.166667, "exit_price": 175.0, "days_held": 30, "sec": "Metals", "notes": "SS tubes export", "screener": "https://www.screener.in/company/RATNAVEER/"}, {"row": 29, "sym": "SATIN", "co": "SATIN", "dt_str": "11 Nov 2025", "exit_str": "10 Jan 2026", "dt": "2025-11-11", "blo": 150.0, "t1": 170.0, "t2": 190.0, "t3": 210.0, "sl": 130.0, "res": "WIN", "btgt": "T3", "pct": 0.4, "exit_price": 210.0, "days_held": 60, "sec": "NBFC", "notes": "MFI recovery", "screener": "https://www.screener.in/company/SATIN/"}, {"row": 30, "sym": "PRICOLLTD", "co": "PRICOL", "dt_str": "12 Nov 2025", "exit_str": "12 Dec 2025", "dt": "2025-11-12", "blo": 550.0, "t1": 600.0, "t2": 625.0, "t3": 700.0, "sl": 500.0, "res": "WIN", "btgt": "T1", "pct": 0.090909, "exit_price": 600.0, "days_held": 30, "sec": "Auto Ancillary", "notes": "EV content growth", "screener": "https://www.screener.in/company/PRICOLLTD/"}, {"row": 31, "sym": "JAMNAAUTO", "co": "JAMNA AUTO", "dt_str": "14 Nov 2025", "exit_str": "13 Jan 2026", "dt": "2025-11-14", "blo": 90.0, "t1": 115.0, "t2": 125.0, "t3": 131.0, "sl": 85.0, "res": "WIN", "btgt": "T3", "pct": 0.455556, "exit_price": 131.0, "days_held": 60, "sec": "Auto Ancillary", "notes": "CV leaf springs", "screener": "https://www.screener.in/company/JAMNAAUTO/"}, {"row": 32, "sym": "GRASIM", "co": "GRASIM", "dt_str": "17 Nov 2025", "exit_str": "01 Jan 2026", "dt": "2025-11-17", "blo": 2750.0, "t1": 2850.0, "t2": 2950.0, "t3": 3250.0, "sl": 2500.0, "res": "WIN", "btgt": "T2", "pct": 0.072727, "exit_price": 2950.0, "days_held": 45, "sec": "Industrials", "notes": "Paint+cement", "screener": "https://www.screener.in/company/GRASIM/"}, {"row": 34, "sym": "TITAN", "co": "TITAN", "dt_str": "18 Nov 2025", "exit_str": "17 Jan 2026", "dt": "2025-11-18", "blo": 3800.0, "t1": 4200.0, "t2": 4400.0, "t3": 4500.0, "sl": 450.0, "res": "WIN", "btgt": "T3", "pct": 0.184211, "exit_price": 4500.0, "days_held": 60, "sec": "Consumer", "notes": "Jewellery demand", "screener": "https://www.screener.in/company/TITAN/"}, {"row": 37, "sym": "POLYMED", "co": "POLYMED", "dt_str": "24 Nov 2025", "exit_str": "24 Dec 2025", "dt": "2025-11-24", "blo": 1750.0, "t1": 2000.0, "t2": 2200.0, "t3": 2400.0, "sl": 1600.0, "res": "WIN", "btgt": "T4", "pct": 0.0, "exit_price": null, "days_held": 35, "sec": "Healthcare", "notes": "Medical devices", "screener": "https://www.screener.in/company/POLYMED/"}, {"row": 38, "sym": "YATHARTH", "co": "YATHARTH", "dt_str": "24 Nov 2025", "exit_str": "24 Dec 2025", "dt": "2025-11-24", "blo": 650.0, "t1": 850.0, "t2": 950.0, "t3": 1100.0, "sl": 600.0, "res": "WIN", "btgt": "T1", "pct": 0.307692, "exit_price": 850.0, "days_held": 30, "sec": "Healthcare", "notes": "Hospital growth", "screener": "https://www.screener.in/company/YATHARTH/"}, {"row": 39, "sym": "GMRAIRPORT", "co": "GMR AIRPORTS", "dt_str": "24 Nov 2025", "exit_str": "24 Dec 2025", "dt": "2025-11-24", "blo": 94.0, "t1": 105.0, "t2": 110.0, "t3": 115.0, "sl": 90.0, "res": "WIN", "btgt": "T1", "pct": 0.117021, "exit_price": 105.0, "days_held": 30, "sec": "Infrastructure", "notes": "Aviation infra", "screener": "https://www.screener.in/company/GMRAIRPORT/"}, {"row": 40, "sym": "GRSE", "co": "GRSE", "dt_str": "27 Nov 2025", "exit_str": "27 Dec 2025", "dt": "2025-11-27", "blo": 2800.0, "t1": 3000.0, "t2": 3200.0, "t3": null, "sl": 2750.0, "res": "WIN", "btgt": "T1", "pct": 0.071429, "exit_price": 3000.0, "days_held": 30, "sec": "Defence", "notes": "Naval orders", "screener": "https://www.screener.in/company/GRSE/"}, {"row": 42, "sym": "VBL", "co": "VBL", "dt_str": "01 Dec 2025", "exit_str": "31 Dec 2025", "dt": "2025-12-01", "blo": 480.0, "t1": 500.0, "t2": 520.0, "t3": 600.0, "sl": 450.0, "res": "WIN", "btgt": "T1", "pct": 0.041667, "exit_price": 500.0, "days_held": 30, "sec": "Consumer", "notes": "Beverage volumes", "screener": "https://www.screener.in/company/VBL/"}, {"row": 48, "sym": "HINDZINC", "co": "HINDZNC", "dt_str": "18 Dec 2025", "exit_str": "01 Feb 2026", "dt": "2025-12-18", "blo": 575.0, "t1": 650.0, "t2": 700.0, "t3": null, "sl": 600.0, "res": "WIN", "btgt": "T2", "pct": 0.217391, "exit_price": 700.0, "days_held": 45, "sec": "Metals", "notes": "Zinc cycle", "screener": "https://www.screener.in/company/HINDZINC/"}, {"row": 50, "sym": "MOSCHIP", "co": "MOSCHIP", "dt_str": "24 Dec 2025", "exit_str": "23 Jan 2026", "dt": "2025-12-24", "blo": 200.0, "t1": 230.0, "t2": 250.0, "t3": 265.0, "sl": 199.0, "res": "WIN", "btgt": "T1", "pct": 0.15, "exit_price": 230.0, "days_held": 30, "sec": "IT", "notes": "Semiconductor play", "screener": "https://www.screener.in/company/MOSCHIP/"}, {"row": 55, "sym": "BHEL", "co": "BHEL", "dt_str": "02 Jan 2026", "exit_str": "03 Mar 2026", "dt": "2026-01-02", "blo": 290.0, "t1": 350.0, "t2": 375.0, "t3": 400.0, "sl": 250.0, "res": "WIN", "btgt": "T3", "pct": 0.37931, "exit_price": 400.0, "days_held": 60, "sec": "Industrials", "notes": "PSU capex", "screener": "https://www.screener.in/company/BHEL/"}, {"row": 56, "sym": "GRAPHITE", "co": "GRAPHITE INDIA", "dt_str": "02 Jan 2026", "exit_str": "03 Mar 2026", "dt": "2026-01-02", "blo": 600.0, "t1": 650.0, "t2": 675.0, "t3": 750.0, "sl": 550.0, "res": "WIN", "btgt": "T3", "pct": 0.25, "exit_price": 750.0, "days_held": 60, "sec": "Metals", "notes": "EV anode demand", "screener": "https://www.screener.in/company/GRAPHITE/"}, {"row": 58, "sym": "PIRAMALFIN", "co": "PIRAMAL FINANCE", "dt_str": "06 Jan 2026", "exit_str": "07 Mar 2026", "dt": "2026-01-06", "blo": 1725.0, "t1": 1880.0, "t2": 1980.0, "t3": 2018.0, "sl": 1676.0, "res": "WIN", "btgt": "T3", "pct": 0.169855, "exit_price": 2018.0, "days_held": 60, "sec": "NBFC", "notes": "AIF growth", "screener": "https://www.screener.in/company/PIRAMALFIN/"}, {"row": 65, "sym": "TATASTEEL", "co": "Tata Steel", "dt_str": "14 Jan 2026", "exit_str": "13 Feb 2026", "dt": "2026-01-14", "blo": 185.0, "t1": 200.0, "t2": 225.0, "t3": 240.0, "sl": 175.0, "res": "WIN", "btgt": "T1", "pct": 0.081081, "exit_price": 200.0, "days_held": 30, "sec": "Metals", "notes": "EU turnaround", "screener": "https://www.screener.in/company/TATASTEEL/"}, {"row": 66, "sym": "DMART", "co": "DMART", "dt_str": "14 Jan 2026", "exit_str": "28 Feb 2026", "dt": "2026-01-14", "blo": 3800.0, "t1": 4000.0, "t2": 4250.0, "t3": 4500.0, "sl": 3700.0, "res": "WIN", "btgt": "T2", "pct": 0.118421, "exit_price": 4250.0, "days_held": 45, "sec": "Retail", "notes": "Volume recovery", "screener": "https://www.screener.in/company/DMART/"}, {"row": 67, "sym": "BAJAJ-AUTO", "co": "Bajaj Auto", "dt_str": "14 Jan 2026", "exit_str": "28 Feb 2026", "dt": "2026-01-14", "blo": 9600.0, "t1": 10000.0, "t2": 10500.0, "t3": 11000.0, "sl": 9500.0, "res": "WIN", "btgt": "T2", "pct": 0.09375, "exit_price": 10500.0, "days_held": 45, "sec": "Auto", "notes": "Strong volumes", "screener": "https://www.screener.in/company/BAJAJ-AUTO/"}, {"row": 68, "sym": "ICICIAMC", "co": "ICICI Prud. AMC", "dt_str": "16 Jan 2026", "exit_str": "17 Mar 2026", "dt": "2026-01-16", "blo": 2700.0, "t1": 3200.0, "t2": 3400.0, "t3": 3600.0, "sl": 2850.0, "res": "WIN", "btgt": "T3", "pct": 0.333333, "exit_price": 3600.0, "days_held": 60, "sec": "AMC", "notes": "Equity inflows", "screener": "https://www.screener.in/company/ICICIAMC/"}, {"row": 69, "sym": "POLYCAB", "co": "Polycab India", "dt_str": "16 Jan 2026", "exit_str": "17 Mar 2026", "dt": "2026-01-16", "blo": 7250.0, "t1": 7450.0, "t2": 7550.0, "t3": 7700.0, "sl": 7000.0, "res": "WIN", "btgt": "T3", "pct": 0.062069, "exit_price": 7700.0, "days_held": 60, "sec": "Industrials", "notes": "Wiring demand", "screener": "https://www.screener.in/company/POLYCAB/"}, {"row": 70, "sym": "IFCI", "co": "IFCI ", "dt_str": "16 Jan 2026", "exit_str": "02 Mar 2026", "dt": "2026-01-16", "blo": 50.0, "t1": 55.0, "t2": 64.39, "t3": 75.0, "sl": 45.0, "res": "WIN", "btgt": "T2", "pct": 0.2878, "exit_price": 64.39, "days_held": 45, "sec": "Finance", "notes": "PSU NBFC recovery", "screener": "https://www.screener.in/company/IFCI/"}, {"row": 71, "sym": "CORONA", "co": "CORONA", "dt_str": "16 Jan 2026", "exit_str": "17 Mar 2026", "dt": "2026-01-16", "blo": 1460.0, "t1": 1550.0, "t2": 1650.0, "t3": 1790.0, "sl": 1400.0, "res": "WIN", "btgt": "T3", "pct": 0.226027, "exit_price": 1790.0, "days_held": 60, "sec": "Consumer", "notes": "Domestic demand", "screener": "https://www.screener.in/company/CORONA/"}, {"row": 72, "sym": "UNIONBANK", "co": "UNION BANK", "dt_str": "16 Jan 2026", "exit_str": "17 Mar 2026", "dt": "2026-01-16", "blo": 155.0, "t1": 165.0, "t2": 180.0, "t3": 200.0, "sl": 145.0, "res": "WIN", "btgt": "T3", "pct": 0.290323, "exit_price": 200.0, "days_held": 60, "sec": "Banking", "notes": "PSU bank rally", "screener": "https://www.screener.in/company/UNIONBANK/"}, {"row": 77, "sym": "TATASTEEL", "co": "Tata Steel", "dt_str": "20 Jan 2026", "exit_str": "19 Feb 2026", "dt": "2026-01-20", "blo": 205.0, "t1": 212.0, "t2": 220.0, "t3": null, "sl": 200.0, "res": "WIN", "btgt": "T1", "pct": 0.034146, "exit_price": 212.0, "days_held": 30, "sec": "Metals", "notes": "EU turnaround", "screener": "https://www.screener.in/company/TATASTEEL/"}, {"row": 78, "sym": "BAJAJ-AUTO", "co": "Bajaj Auto", "dt_str": "25 Jan 2026", "exit_str": "26 Mar 2026", "dt": "2026-01-25", "blo": 9800.0, "t1": 10000.0, "t2": 10500.0, "t3": 11500.0, "sl": 9750.0, "res": "WIN", "btgt": "T3", "pct": 0.173469, "exit_price": 11500.0, "days_held": 60, "sec": "Auto", "notes": "Strong volumes", "screener": "https://www.screener.in/company/BAJAJ-AUTO/"}, {"row": 79, "sym": "ASTRAL", "co": "Astral Ltd", "dt_str": "25 Jan 2026", "exit_str": "26 Mar 2026", "dt": "2026-01-25", "blo": 1575.0, "t1": 1700.0, "t2": 1800.0, "t3": 1900.0, "sl": 1530.0, "res": "WIN", "btgt": "T3", "pct": 0.206349, "exit_price": 1900.0, "days_held": 60, "sec": "Consumer", "notes": "Pipe demand", "screener": "https://www.screener.in/company/ASTRAL/"}, {"row": 82, "sym": "MAHABANK", "co": "Maharashtra Bank", "dt_str": "26 Jan 2026", "exit_str": "25 Feb 2026", "dt": "2026-01-26", "blo": 60.0, "t1": 75.0, "t2": 90.0, "t3": 120.0, "sl": 50.0, "res": "WIN", "btgt": "T1", "pct": 0.25, "exit_price": 75.0, "days_held": 30, "sec": "Banking", "notes": "NPA reduction", "screener": "https://www.screener.in/company/MAHABANK/"}, {"row": 83, "sym": "PRECWIRE", "co": "Precision Wires", "dt_str": "27 Jan 2026", "exit_str": "28 Mar 2026", "dt": "2026-01-27", "blo": 285.0, "t1": 325.0, "t2": 365.0, "t3": 425.0, "sl": 260.0, "res": "WIN", "btgt": "T3", "pct": 0.491228, "exit_price": 425.0, "days_held": 60, "sec": "Industrials", "notes": "Copper demand", "screener": "https://www.screener.in/company/PRECWIRE/"}, {"row": 84, "sym": "NTPC", "co": "NTPC", "dt_str": "28 Jan 2026", "exit_str": "29 Mar 2026", "dt": "2026-01-28", "blo": 365.0, "t1": 385.0, "t2": 390.0, "t3": 399.9, "sl": 355.0, "res": "WIN", "btgt": "T3", "pct": 0.095616, "exit_price": 399.9, "days_held": 60, "sec": "Power", "notes": "Renewables", "screener": "https://www.screener.in/company/NTPC/"}, {"row": 87, "sym": "MTARTECH", "co": "MTAR Technologies", "dt_str": "01 Feb 2026", "exit_str": "02 Apr 2026", "dt": "2026-02-01", "blo": 2450.0, "t1": 3500.0, "t2": 4500.0, "t3": 6500.0, "sl": 2000.0, "res": "WIN", "btgt": "T3", "pct": 1.653061, "exit_price": 6500.0, "days_held": 60, "sec": "Defence", "notes": "Space orders", "screener": "https://www.screener.in/company/MTARTECH/"}, {"row": 89, "sym": "CPPLUS", "co": "Aditya Infotech", "dt_str": "04 Feb 2026", "exit_str": "05 Apr 2026", "dt": "2026-02-04", "blo": 1585.0, "t1": 1650.0, "t2": 1685.0, "t3": 1725.0, "sl": 1550.0, "res": "WIN", "btgt": "T3", "pct": 0.088328, "exit_price": 1725.0, "days_held": 60, "sec": "IT", "notes": "Security tech", "screener": "https://www.screener.in/company/CPPLUS/"}, {"row": 90, "sym": "LGEINDIA", "co": "LG Electronics", "dt_str": "07 Feb 2026", "exit_str": "24 Mar 2026", "dt": "2026-02-07", "blo": 1530.0, "t1": 1600.0, "t2": 1640.0, "t3": null, "sl": 1490.0, "res": "WIN", "btgt": "T2", "pct": 0.071895, "exit_price": 1640.0, "days_held": 45, "sec": "Consumer", "notes": "Premiumisation", "screener": "https://www.screener.in/company/LGEINDIA/"}, {"row": 91, "sym": "NSDL", "co": "NSDL", "dt_str": "07 Feb 2026", "exit_str": "24 Mar 2026", "dt": "2026-02-07", "blo": 1000.0, "t1": 1050.0, "t2": 1100.0, "t3": null, "sl": 980.0, "res": "WIN", "btgt": "T2", "pct": 0.1, "exit_price": 1100.0, "days_held": 45, "sec": "Finance", "notes": "Demat growth", "screener": "https://www.screener.in/company/NSDL/"}, {"row": 92, "sym": "AMAGI", "co": "Amagi Media", "dt_str": "07 Feb 2026", "exit_str": "08 Apr 2026", "dt": "2026-02-07", "blo": 385.0, "t1": 400.0, "t2": 405.0, "t3": 425.0, "sl": 375.0, "res": "WIN", "btgt": "T3", "pct": 0.103896, "exit_price": 425.0, "days_held": 60, "sec": "Media", "notes": "Streaming rev.", "screener": "https://www.screener.in/company/AMAGI/"}, {"row": 93, "sym": "STLTECH", "co": "STL Tech", "dt_str": "08 Feb 2026", "exit_str": "09 Apr 2026", "dt": "2026-02-08", "blo": 165.0, "t1": 200.0, "t2": 250.0, "t3": 295.0, "sl": 150.0, "res": "WIN", "btgt": "T3", "pct": 0.787879, "exit_price": 295.0, "days_held": 60, "sec": "Telecom", "notes": "Fibre rollout", "screener": "https://www.screener.in/company/STLTECH/"}, {"row": 94, "sym": "BHARATFORG", "co": "Bharat Forge", "dt_str": "08 Feb 2026", "exit_str": "10 Mar 2026", "dt": "2026-02-08", "blo": 1625.0, "t1": 1890.0, "t2": 2100.0, "t3": 2400.0, "sl": 1550.0, "res": "WIN", "btgt": "T1", "pct": 0.163077, "exit_price": 1890.0, "days_held": 30, "sec": "Auto", "notes": "Defence+Auto", "screener": "https://www.screener.in/company/BHARATFORG/"}, {"row": 95, "sym": "ABSLMF", "co": "ABSL AMC", "dt_str": "08 Feb 2026", "exit_str": "10 Mar 2026", "dt": "2026-02-08", "blo": 865.0, "t1": 1000.0, "t2": 1100.0, "t3": 1200.0, "sl": 800.0, "res": "WIN", "btgt": "T1", "pct": 0.156069, "exit_price": 1000.0, "days_held": 30, "sec": "AMC", "notes": "Equity AUM", "screener": "https://www.screener.in/company/ABSLMF/"}, {"row": 96, "sym": "BELRISE", "co": "Belrise Industries", "dt_str": "08 Feb 2026", "exit_str": "09 Apr 2026", "dt": "2026-02-08", "blo": 175.0, "t1": 196.0, "t2": 210.0, "t3": 213.0, "sl": 165.0, "res": "WIN", "btgt": "T3", "pct": 0.217143, "exit_price": 213.0, "days_held": 60, "sec": "Auto", "notes": "EV suppliers", "screener": "https://www.screener.in/company/BELRISE/"}, {"row": 97, "sym": "THERMAX", "co": "Thermax", "dt_str": "08 Feb 2026", "exit_str": "09 Apr 2026", "dt": "2026-02-08", "blo": 3065.0, "t1": 3400.0, "t2": 3600.0, "t3": 4065.0, "sl": 2950.0, "res": "WIN", "btgt": "T3", "pct": 0.326264, "exit_price": 4065.0, "days_held": 60, "sec": "Industrials", "notes": "Order wins", "screener": "https://www.screener.in/company/THERMAX/"}, {"row": 98, "sym": "GESHIP", "co": "GE Shipping", "dt_str": "08 Feb 2026", "exit_str": "09 Apr 2026", "dt": "2026-02-08", "blo": 1330.0, "t1": 1400.0, "t2": 1450.0, "t3": 1580.0, "sl": 1290.0, "res": "WIN", "btgt": "T3", "pct": 0.18797, "exit_price": 1580.0, "days_held": 60, "sec": "Logistics", "notes": "Freight rates", "screener": "https://www.screener.in/company/GESHIP/"}, {"row": 100, "sym": "GLENMARK", "co": "Glenmark Pharma", "dt_str": "09 Feb 2026", "exit_str": "11 Mar 2026", "dt": "2026-02-09", "blo": 2085.0, "t1": 2400.0, "t2": null, "t3": null, "sl": 2000.0, "res": "WIN", "btgt": "T1", "pct": 0.151079, "exit_price": 2400.0, "days_held": 30, "sec": "Pharma", "notes": "EU filing", "screener": "https://www.screener.in/company/GLENMARK/"}, {"row": 101, "sym": "SAMMANCAP", "co": "Samman Capital", "dt_str": "10 Feb 2026", "exit_str": "27 Mar 2026", "dt": "2026-02-10", "blo": 148.0, "t1": 160.0, "t2": 165.0, "t3": null, "sl": 144.0, "res": "WIN", "btgt": "T2", "pct": 0.114865, "exit_price": 165.0, "days_held": 45, "sec": "Finance", "notes": "Small-cap play", "screener": "https://www.screener.in/company/SAMMANCAP/"}, {"row": 103, "sym": "ANTELOPUS", "co": "Antelopus", "dt_str": "12 Feb 2026", "exit_str": "13 Apr 2026", "dt": "2026-02-12", "blo": 580.0, "t1": 620.0, "t2": 650.0, "t3": 700.0, "sl": 560.0, "res": "WIN", "btgt": "T3", "pct": 0.206897, "exit_price": 700.0, "days_held": 60, "sec": "IT", "notes": "AI tailwind", "screener": "https://www.screener.in/company/ANTELOPUS/"}, {"row": 104, "sym": "TCS", "co": "TCS", "dt_str": "16 Feb 2026", "exit_str": "17 Apr 2026", "dt": "2026-02-16", "blo": 3120.0, "t1": 3260.0, "t2": 3320.0, "t3": 3440.0, "sl": 3040.0, "res": "WIN", "btgt": "T3", "pct": 0.102564, "exit_price": 3440.0, "days_held": 60, "sec": "IT", "notes": "BFSI ramp-up", "screener": "https://www.screener.in/company/TCS/"}, {"row": 105, "sym": "BSE", "co": "BSE Ltd", "dt_str": "16 Feb 2026", "exit_str": "17 Apr 2026", "dt": "2026-02-16", "blo": 2590.0, "t1": 2700.0, "t2": 2800.0, "t3": 3000.0, "sl": 2560.0, "res": "WIN", "btgt": "T3", "pct": 0.158301, "exit_price": 3000.0, "days_held": 60, "sec": "Finance", "notes": "Volume surge", "screener": "https://www.screener.in/company/BSE/"}, {"row": 106, "sym": "IRFC", "co": "IRFC", "dt_str": "19 Feb 2026", "exit_str": "21 Mar 2026", "dt": "2026-02-19", "blo": 95.0, "t1": 100.0, "t2": 105.0, "t3": 112.0, "sl": 93.0, "res": "WIN", "btgt": "T1", "pct": 0.052632, "exit_price": 100.0, "days_held": 30, "sec": "NBFC", "notes": "Railway capex", "screener": "https://www.screener.in/company/IRFC/"}, {"row": 107, "sym": "IREDA", "co": "IREDA", "dt_str": "20 Feb 2026", "exit_str": "22 Mar 2026", "dt": "2026-02-20", "blo": 100.0, "t1": 130.0, "t2": 160.0, "t3": 200.0, "sl": 92.0, "res": "WIN", "btgt": "T1", "pct": 0.3, "exit_price": 130.0, "days_held": 30, "sec": "NBFC", "notes": "Green energy", "screener": "https://www.screener.in/company/IREDA/"}, {"row": 108, "sym": "JINDALSTEEL", "co": "Jindal Steel (B2)", "dt_str": "23 Feb 2026", "exit_str": "24 Apr 2026", "dt": "2026-02-23", "blo": 1085.0, "t1": 1150.0, "t2": 1200.0, "t3": 1250.0, "sl": 950.0, "res": "WIN", "btgt": "T3", "pct": 0.152074, "exit_price": 1250.0, "days_held": 60, "sec": "Metals", "notes": "Domestic demand", "screener": "https://www.screener.in/company/JINDALSTEEL/"}, {"row": 109, "sym": "OBEROIRLTY", "co": "Oberoi Realty", "dt_str": "23 Feb 2026", "exit_str": "24 Apr 2026", "dt": "2026-02-23", "blo": 1450.0, "t1": 1550.0, "t2": 1650.0, "t3": 1700.0, "sl": 1400.0, "res": "WIN", "btgt": "T3", "pct": 0.172414, "exit_price": 1700.0, "days_held": 60, "sec": "Realty", "notes": "Luxury demand", "screener": "https://www.screener.in/company/OBEROIRLTY/"}, {"row": 110, "sym": "RENUKA", "co": "Renuka Sugars", "dt_str": "23 Feb 2026", "exit_str": "24 Apr 2026", "dt": "2026-02-23", "blo": 23.0, "t1": 25.0, "t2": 30.0, "t3": 40.0, "sl": 20.0, "res": "WIN", "btgt": "T3", "pct": 0.73913, "exit_price": 40.0, "days_held": 60, "sec": "FMCG", "notes": "Sugar exports", "screener": "https://www.screener.in/company/RENUKA/"}, {"row": 111, "sym": "HCLTECH", "co": "HCL Technologies", "dt_str": "27 Feb 2026", "exit_str": "29 Mar 2026", "dt": "2026-02-27", "blo": 1665.0, "t1": 1750.0, "t2": null, "t3": null, "sl": 1600.0, "res": "WIN", "btgt": "T1", "pct": 0.051051, "exit_price": 1750.0, "days_held": 30, "sec": "IT", "notes": "Deal ramp-up", "screener": "https://www.screener.in/company/HCLTECH/"}, {"row": 112, "sym": "OLA", "co": "Ola Electric", "dt_str": "27 Feb 2026", "exit_str": "28 Apr 2026", "dt": "2026-02-27", "blo": 33.0, "t1": 36.0, "t2": 37.5, "t3": 40.0, "sl": 32.0, "res": "WIN", "btgt": "T3", "pct": 0.212121, "exit_price": 40.0, "days_held": 60, "sec": "Auto", "notes": "EV push", "screener": "https://www.screener.in/company/OLA/"}, {"row": 113, "sym": "JARO", "co": "JARO Education", "dt_str": "01 Mar 2026", "exit_str": "31 Mar 2026", "dt": "2026-03-01", "blo": 450.0, "t1": 600.0, "t2": 700.0, "t3": 900.0, "sl": 400.0, "res": "WIN", "btgt": "T1", "pct": 0.333333, "exit_price": 600.0, "days_held": 30, "sec": "Education", "notes": "Ed-tech growth", "screener": "https://www.screener.in/company/JARO/"}, {"row": 114, "sym": "COCHINSHIP", "co": "Cochin Shipyard", "dt_str": "02 Mar 2026", "exit_str": "16 Apr 2026", "dt": "2026-03-02", "blo": 1200.0, "t1": 1600.0, "t2": 1650.0, "t3": 2000.0, "sl": 1050.0, "res": "WIN", "btgt": "T2", "pct": 0.375, "exit_price": 1650.0, "days_held": 45, "sec": "Defence", "notes": "Order book", "screener": "https://www.screener.in/company/COCHINSHIP/"}, {"row": 115, "sym": "JINDALSTEEL", "co": "Jindal Steel", "dt_str": "02 Mar 2026", "exit_str": "01 Apr 2026", "dt": "2026-03-02", "blo": 1075.0, "t1": 1250.0, "t2": 1300.0, "t3": 1500.0, "sl": 1028.0, "res": "WIN", "btgt": "T1", "pct": 0.162791, "exit_price": 1250.0, "days_held": 30, "sec": "Metals", "notes": "Capex restart", "screener": "https://www.screener.in/company/JINDALSTEEL/"}, {"row": 117, "sym": "PRAJIND", "co": "Praj Industries", "dt_str": "05 Mar 2026", "exit_str": "04 Apr 2026", "dt": "2026-03-05", "blo": 330.0, "t1": 385.0, "t2": 425.0, "t3": 450.0, "sl": 314.0, "res": "WIN", "btgt": "T1", "pct": 0.166667, "exit_price": 385.0, "days_held": 30, "sec": "Energy", "notes": "Crude recovery", "screener": "https://www.screener.in/company/PRAJIND/"}, {"row": 118, "sym": "ANGELONE", "co": "Angel One", "dt_str": "06 Mar 2026", "exit_str": "20 Apr 2026", "dt": "2026-03-06", "blo": 200.0, "t1": 250.0, "t2": 260.0, "t3": 350.0, "sl": 193.0, "res": "WIN", "btgt": "T2", "pct": 0.3, "exit_price": 260.0, "days_held": 45, "sec": "Broking", "notes": "Weak guidance", "screener": "https://www.screener.in/company/ANGELONE/"}, {"row": 119, "sym": "NATCOPHARM", "co": "Natco Pharma", "dt_str": "08 Mar 2026", "exit_str": "07 Apr 2026", "dt": "2026-03-08", "blo": 1000.0, "t1": 1150.0, "t2": 1200.0, "t3": null, "sl": 975.0, "res": "WIN", "btgt": "T1", "pct": 0.15, "exit_price": 1150.0, "days_held": 30, "sec": "Pharma", "notes": "Quick commerce", "screener": "https://www.screener.in/company/NATCOPHARM/"}, {"row": 121, "sym": "NMDC", "co": "NMDC Ltd", "dt_str": "09 Mar 2026", "exit_str": "23 Apr 2026", "dt": "2026-03-09", "blo": 83.0, "t1": 88.0, "t2": 90.0, "t3": 110.0, "sl": 80.0, "res": "WIN", "btgt": "T2", "pct": 0.084337, "exit_price": 90.0, "days_held": 45, "sec": "Metals", "notes": "Iron ore demand", "screener": "https://www.screener.in/company/NMDC/"}, {"row": 122, "sym": "NMDC", "co": "NMDC Ltd", "dt_str": "09 Mar 2026", "exit_str": "08 Apr 2026", "dt": "2026-03-09", "blo": 79.0, "t1": 90.0, "t2": 94.0, "t3": 110.0, "sl": 78.0, "res": "WIN", "btgt": "T1", "pct": 0.139241, "exit_price": 90.0, "days_held": 30, "sec": "Metals", "notes": "Iron ore vol.", "screener": "https://www.screener.in/company/NMDC/"}, {"row": 123, "sym": "DELHIVERY", "co": "Delhivery", "dt_str": "10 Mar 2026", "exit_str": "09 Apr 2026", "dt": "2026-03-10", "blo": 450.0, "t1": 500.0, "t2": 550.0, "t3": 600.0, "sl": 400.0, "res": "WIN", "btgt": "T1", "pct": 0.111111, "exit_price": 500.0, "days_held": 30, "sec": "Logistics", "notes": "Unit economics", "screener": "https://www.screener.in/company/DELHIVERY/"}, {"row": 124, "sym": "RECLTD", "co": "REC Limited", "dt_str": "11 Mar 2026", "exit_str": "10 Apr 2026", "dt": "2026-03-11", "blo": 320.0, "t1": 400.0, "t2": 425.0, "t3": 500.0, "sl": 300.0, "res": "WIN", "btgt": "T1", "pct": 0.25, "exit_price": 400.0, "days_held": 30, "sec": "NBFC", "notes": "Power lending", "screener": "https://www.screener.in/company/RECLTD/"}, {"row": 125, "sym": "CUMMINSIND", "co": "Cummins India", "dt_str": "11 Mar 2026", "exit_str": "10 Apr 2026", "dt": "2026-03-11", "blo": 4800.0, "t1": 5500.0, "t2": null, "t3": null, "sl": 4750.0, "res": "WIN", "btgt": "T1", "pct": 0.145833, "exit_price": 5500.0, "days_held": 30, "sec": "Industrials", "notes": "Export orders", "screener": "https://www.screener.in/company/CUMMINSIND/"}, {"row": 126, "sym": "TRENT", "co": "Trent", "dt_str": "11 Mar 2026", "exit_str": "10 Apr 2026", "dt": "2026-03-11", "blo": 3200.0, "t1": 4000.0, "t2": 4500.0, "t3": 5000.0, "sl": 3000.0, "res": "WIN", "btgt": "T1", "pct": 0.25, "exit_price": 4000.0, "days_held": 30, "sec": "Retail", "notes": "Store expansion", "screener": "https://www.screener.in/company/TRENT/"}, {"row": 127, "sym": "SONACOMS", "co": "Sona BLW Precision", "dt_str": "11 Mar 2026", "exit_str": "25 Apr 2026", "dt": "2026-03-11", "blo": 530.0, "t1": 550.0, "t2": 600.0, "t3": 650.0, "sl": 485.0, "res": "WIN", "btgt": "T2", "pct": 0.132075, "exit_price": 600.0, "days_held": 45, "sec": "Auto", "notes": "EV components", "screener": "https://www.screener.in/company/SONACOMS/"}, {"row": 128, "sym": "DATAPATTNS", "co": "Data Patterns", "dt_str": "18 Mar 2026", "exit_str": "17 Apr 2026", "dt": "2026-03-18", "blo": 3400.0, "t1": 4000.0, "t2": 4250.0, "t3": 4500.0, "sl": 3250.0, "res": "WIN", "btgt": "T1", "pct": 0.176471, "exit_price": 4000.0, "days_held": 30, "sec": "Defence", "notes": "DRDO orders", "screener": "https://www.screener.in/company/DATAPATTNS/"}, {"row": 130, "sym": "CHENNPETRO", "co": "Chennai Petro", "dt_str": "21 Mar 2026", "exit_str": "20 Apr 2026", "dt": "2026-03-21", "blo": 1000.0, "t1": 1200.0, "t2": 1300.0, "t3": 1400.0, "sl": 950.0, "res": "WIN", "btgt": "T1", "pct": 0.2, "exit_price": 1200.0, "days_held": 30, "sec": "Energy", "notes": "Refining margins", "screener": "https://www.screener.in/company/CHENNPETRO/"}, {"row": 131, "sym": "APOLLOMICR", "co": "Apollo Micro Systems", "dt_str": "22 Mar 2026", "exit_str": "21 Apr 2026", "dt": "2026-03-22", "blo": 285.0, "t1": 330.0, "t2": 350.0, "t3": 360.0, "sl": 275.0, "res": "WIN", "btgt": "T1", "pct": 0.157895, "exit_price": 330.0, "days_held": 30, "sec": "Defence", "notes": "Defence exports", "screener": "https://www.screener.in/company/APOLLOMICR/"}, {"row": 134, "sym": "MEESHO", "co": "Meesho", "dt_str": "24 Mar 2026", "exit_str": "08 May 2026", "dt": "2026-03-24", "blo": 170.0, "t1": 185.0, "t2": 190.0, "t3": 200.0, "sl": 165.0, "res": "WIN", "btgt": "T2", "pct": 0.117647, "exit_price": 190.0, "days_held": 45, "sec": "Consumer", "notes": "Quick commerce", "screener": "https://www.screener.in/company/MEESHO/"}, {"row": 135, "sym": "HDFCBANK", "co": "HDFC Bank", "dt_str": "27 Mar 2026", "exit_str": "26 Apr 2026", "dt": "2026-03-27", "blo": 725.0, "t1": 800.0, "t2": 825.0, "t3": 850.0, "sl": 740.0, "res": "WIN", "btgt": "T1", "pct": 0.103448, "exit_price": 800.0, "days_held": 30, "sec": "Banking", "notes": "Strong AUM", "screener": "https://www.screener.in/company/HDFCBANK/"}, {"row": 136, "sym": "JPPOWER", "co": "JP Power", "dt_str": "01 Apr 2026", "exit_str": "31 May 2026", "dt": "2026-04-01", "blo": 14.0, "t1": 25.0, "t2": 27.5, "t3": 30.0, "sl": 12.0, "res": "WIN", "btgt": "T3", "pct": 1.142857, "exit_price": 30.0, "days_held": 60, "sec": "Power", "notes": "PSU re-rating", "screener": "https://www.screener.in/company/JPPOWER/"}, {"row": 138, "sym": "JARO", "co": "JARO Education", "dt_str": "13 May 2026", "exit_str": "31 May 2026", "dt": "2026-05-13", "blo": 450.0, "t1": 500.0, "t2": 550.0, "t3": 574.0, "sl": 395.0, "res": "WIN", "btgt": "T3", "pct": 0.275556, "exit_price": 574.0, "days_held": 60, "sec": "Education", "notes": "Ed-tech growth", "screener": "https://www.screener.in/company/JARO/"}, {"row": 140, "sym": "KPL", "co": "KWALITY PHARMA LIMITED", "dt_str": "18 May 2026", "exit_str": "31 May 2026", "dt": "2026-05-18", "blo": 1820.0, "t1": 1950.0, "t2": 2224.4, "t3": 2500.0, "sl": 1725.0, "res": "WIN", "btgt": "T2", "pct": 0.222198, "exit_price": 2224.4, "days_held": 45, "sec": "Industrials", "notes": "Specialty paper", "screener": "https://www.screener.in/company/KPL/"}];
+const LOSSES = [{"row": 5, "sym": "HDFCBANK", "co": "HDFC Bank", "dt_str": "16 Sep 2024", "exit_str": "01 Oct 2024", "dt": "2024-09-16", "blo": 800.0, "t1": 850.0, "t2": 890.0, "t3": 940.0, "sl": 780.0, "res": "LOSS", "btgt": "SL", "pct": -0.025, "exit_price": 780.0, "days_held": 15, "sec": "Banking", "notes": "RBI policy", "screener": "https://www.screener.in/company/HDFCBANK/"}, {"row": 6, "sym": "INFY", "co": "Infosys", "dt_str": "05 Oct 2024", "exit_str": "20 Oct 2024", "dt": "2024-10-05", "blo": 1750.0, "t1": 1830.0, "t2": 1900.0, "t3": 2000.0, "sl": 1700.0, "res": "LOSS", "btgt": "SL", "pct": -0.028571, "exit_price": 1700.0, "days_held": 15, "sec": "IT", "notes": "Midcap IT tailwind", "screener": "https://www.screener.in/company/INFY/"}, {"row": 7, "sym": "TATAMOTORS", "co": "Tata Motors", "dt_str": "19 Oct 2024", "exit_str": "03 Nov 2024", "dt": "2024-10-19", "blo": 390.0, "t1": 420.0, "t2": 450.0, "t3": 490.0, "sl": 375.0, "res": "LOSS", "btgt": "SL", "pct": -0.038462, "exit_price": 375.0, "days_held": 15, "sec": "Auto", "notes": "EV segment", "screener": "https://www.screener.in/company/TATAMOTORS/"}, {"row": 15, "sym": "JMFINANCIL", "co": "JMF", "dt_str": "27 Oct 2025", "exit_str": "11 Nov 2025", "dt": "2025-10-27", "blo": 170.0, "t1": 178.0, "t2": 182.0, "t3": 190.0, "sl": 168.0, "res": "LOSS", "btgt": "SL", "pct": -0.011765, "exit_price": 168.0, "days_held": 15, "sec": "Finance", "notes": "IB & lending", "screener": "https://www.screener.in/company/JMFINANCIL/"}, {"row": 19, "sym": "JAICORPLTD", "co": "JAICORP", "dt_str": "29 Oct 2025", "exit_str": "13 Nov 2025", "dt": "2025-10-29", "blo": 170.0, "t1": 180.0, "t2": 190.0, "t3": null, "sl": 160.0, "res": "LOSS", "btgt": "SL", "pct": -0.058824, "exit_price": 160.0, "days_held": 15, "sec": "Real Estate", "notes": "Land monetisation", "screener": "https://www.screener.in/company/JAICORPLTD/"}, {"row": 35, "sym": "BBTC", "co": "BBTC", "dt_str": "18 Nov 2025", "exit_str": "03 Dec 2025", "dt": "2025-11-18", "blo": 1800.0, "t1": 2000.0, "t2": 2100.0, "t3": null, "sl": 1600.0, "res": "LOSS", "btgt": "SL", "pct": -0.111111, "exit_price": 1600.0, "days_held": 15, "sec": "Agri", "notes": "Plantation play", "screener": "https://www.screener.in/company/BBTC/"}, {"row": 36, "sym": "AWL", "co": "AWL", "dt_str": "19 Nov 2025", "exit_str": "04 Dec 2025", "dt": "2025-11-19", "blo": 270.0, "t1": 300.0, "t2": null, "t3": null, "sl": 260.0, "res": "LOSS", "btgt": "SL", "pct": -0.037037, "exit_price": 260.0, "days_held": 15, "sec": "FMCG", "notes": "Edible oil play", "screener": "https://www.screener.in/company/AWL/"}, {"row": 43, "sym": "PNB", "co": "PNB", "dt_str": "10 Dec 2025", "exit_str": "25 Dec 2025", "dt": "2025-12-10", "blo": 114.0, "t1": 145.0, "t2": 180.0, "t3": null, "sl": 110.0, "res": "LOSS", "btgt": "SL", "pct": -0.035088, "exit_price": 110.0, "days_held": 15, "sec": "Banking", "notes": "PSU bank", "screener": "https://www.screener.in/company/PNB/"}, {"row": 44, "sym": "POLYMED", "co": "POLYMED", "dt_str": "10 Dec 2025", "exit_str": "25 Dec 2025", "dt": "2025-12-10", "blo": 1825.0, "t1": 1900.0, "t2": 1950.0, "t3": 2000.0, "sl": 1750.0, "res": "LOSS", "btgt": "SL", "pct": -0.041096, "exit_price": 1750.0, "days_held": 15, "sec": "Healthcare", "notes": "Medical devices", "screener": "https://www.screener.in/company/POLYMED/"}, {"row": 45, "sym": "PARADEEP", "co": "PARADEEP", "dt_str": "15 Dec 2025", "exit_str": "30 Dec 2025", "dt": "2025-12-15", "blo": 150.0, "t1": 160.0, "t2": 170.0, "t3": 180.0, "sl": 145.0, "res": "LOSS", "btgt": "SL", "pct": -0.033333, "exit_price": 145.0, "days_held": 15, "sec": "Chemicals", "notes": "Fertiliser demand", "screener": "https://www.screener.in/company/PARADEEP/"}, {"row": 46, "sym": "NFL", "co": "NFL", "dt_str": "15 Dec 2025", "exit_str": "30 Dec 2025", "dt": "2025-12-15", "blo": 85.0, "t1": 90.0, "t2": 95.0, "t3": 100.0, "sl": 80.0, "res": "LOSS", "btgt": "SL", "pct": -0.058824, "exit_price": 80.0, "days_held": 15, "sec": "Chemicals", "notes": "Urea demand", "screener": "https://www.screener.in/company/NFL/"}, {"row": 47, "sym": "JISLJALEQS", "co": "JAIN IRRIGATION", "dt_str": "15 Dec 2025", "exit_str": "30 Dec 2025", "dt": "2025-12-15", "blo": 40.0, "t1": 45.0, "t2": 50.0, "t3": 55.0, "sl": 38.0, "res": "LOSS", "btgt": "SL", "pct": -0.05, "exit_price": 38.0, "days_held": 15, "sec": "Agri", "notes": "Agri infrastructure", "screener": "https://www.screener.in/company/JISLJALEQS/"}, {"row": 49, "sym": "SWANCORP", "co": "SWANCORP", "dt_str": "23 Dec 2025", "exit_str": "07 Jan 2026", "dt": "2025-12-23", "blo": 475.0, "t1": 510.0, "t2": 530.0, "t3": 585.0, "sl": 450.0, "res": "LOSS", "btgt": "SL", "pct": -0.052632, "exit_price": 450.0, "days_held": 15, "sec": "Finance", "notes": "Micro-cap play", "screener": "https://www.screener.in/company/SWANCORP/"}, {"row": 52, "sym": "JSL", "co": "JINDAL STAINLESS", "dt_str": "30 Dec 2025", "exit_str": "14 Jan 2026", "dt": "2025-12-30", "blo": 820.0, "t1": 900.0, "t2": 1000.0, "t3": 1100.0, "sl": 775.0, "res": "LOSS", "btgt": "SL", "pct": -0.054878, "exit_price": 775.0, "days_held": 15, "sec": "Metals", "notes": "SS demand", "screener": "https://www.screener.in/company/JSL/"}, {"row": 53, "sym": "DAMCAPITAL", "co": "DAMCAPITAL", "dt_str": "01 Jan 2026", "exit_str": "16 Jan 2026", "dt": "2026-01-01", "blo": 205.0, "t1": 250.0, "t2": 275.0, "t3": 290.0, "sl": 198.0, "res": "LOSS", "btgt": "SL", "pct": -0.034146, "exit_price": 198.0, "days_held": 15, "sec": "Finance", "notes": "IB deal flow", "screener": "https://www.screener.in/company/DAMCAPITAL/"}, {"row": 57, "sym": "RELIANCE", "co": "Reliance Industries", "dt_str": "05 Jan 2026", "exit_str": "20 Jan 2026", "dt": "2026-01-05", "blo": 1575.0, "t1": 1650.0, "t2": 1700.0, "t3": 2000.0, "sl": 1550.0, "res": "LOSS", "btgt": "SL", "pct": -0.015873, "exit_price": 1550.0, "days_held": 15, "sec": "Energy", "notes": "Strong Q2", "screener": "https://www.screener.in/company/RELIANCE/"}, {"row": 59, "sym": "MINDTECK", "co": "MINDTECK", "dt_str": "06 Jan 2026", "exit_str": "21 Jan 2026", "dt": "2026-01-06", "blo": 220.0, "t1": 260.0, "t2": 270.0, "t3": 280.0, "sl": 230.0, "res": "LOSS", "btgt": "SL", "pct": 0.045455, "exit_price": 230.0, "days_held": 15, "sec": "IT", "notes": "Tech services", "screener": "https://www.screener.in/company/MINDTECK/"}, {"row": 60, "sym": "POONAWALLA", "co": "POONAWALLA", "dt_str": "06 Jan 2026", "exit_str": "21 Jan 2026", "dt": "2026-01-06", "blo": 480.0, "t1": 500.0, "t2": 550.0, "t3": 600.0, "sl": 462.0, "res": "LOSS", "btgt": "SL", "pct": -0.0375, "exit_price": 462.0, "days_held": 15, "sec": "NBFC", "notes": "Consumer lending", "screener": "https://www.screener.in/company/POONAWALLA/"}, {"row": 62, "sym": "SAMHI", "co": "SAMHI", "dt_str": "07 Jan 2026", "exit_str": "22 Jan 2026", "dt": "2026-01-07", "blo": 195.0, "t1": 205.0, "t2": 210.0, "t3": 220.0, "sl": 187.5, "res": "LOSS", "btgt": "SL", "pct": -0.038462, "exit_price": 187.5, "days_held": 15, "sec": "Hospitality", "notes": "Hotel expansion", "screener": "https://www.screener.in/company/SAMHI/"}, {"row": 63, "sym": "ARSSBL", "co": "ARSSBL", "dt_str": "07 Jan 2026", "exit_str": "22 Jan 2026", "dt": "2026-01-07", "blo": 645.0, "t1": 700.0, "t2": 740.0, "t3": 800.0, "sl": 625.0, "res": "LOSS", "btgt": "SL", "pct": -0.031008, "exit_price": 625.0, "days_held": 15, "sec": "Finance", "notes": "Value buy", "screener": "https://www.screener.in/company/ARSSBL/"}, {"row": 73, "sym": "DALBHARAT", "co": "DALMIA BHARAT", "dt_str": "16 Jan 2026", "exit_str": "31 Jan 2026", "dt": "2026-01-16", "blo": 1975.0, "t1": 2200.0, "t2": 2400.0, "t3": 2600.0, "sl": 1850.0, "res": "LOSS", "btgt": "SL", "pct": -0.063291, "exit_price": 1850.0, "days_held": 15, "sec": "Cement", "notes": "Infra cycle play", "screener": "https://www.screener.in/company/DALBHARAT/"}, {"row": 74, "sym": "APOLLOTYRE", "co": "APOLLO TYRES", "dt_str": "16 Jan 2026", "exit_str": "31 Jan 2026", "dt": "2026-01-16", "blo": 475.0, "t1": 500.0, "t2": 525.0, "t3": 550.0, "sl": 450.0, "res": "LOSS", "btgt": "SL", "pct": -0.052632, "exit_price": 450.0, "days_held": 15, "sec": "Auto", "notes": "Volume recovery", "screener": "https://www.screener.in/company/APOLLOTYRE/"}, {"row": 80, "sym": "BANKINDIA", "co": "Bank of India", "dt_str": "25 Jan 2026", "exit_str": "09 Feb 2026", "dt": "2026-01-25", "blo": 168.0, "t1": 190.0, "t2": 200.0, "t3": 220.0, "sl": 150.0, "res": "LOSS", "btgt": "SL", "pct": -0.107143, "exit_price": 150.0, "days_held": 15, "sec": "Banking", "notes": "Loan growth", "screener": "https://www.screener.in/company/BANKINDIA/"}, {"row": 86, "sym": "IOC", "co": "Indian Oil Corp", "dt_str": "30 Jan 2026", "exit_str": "14 Feb 2026", "dt": "2026-01-30", "blo": 150.0, "t1": 160.0, "t2": 165.0, "t3": 170.0, "sl": 145.0, "res": "LOSS", "btgt": "SL", "pct": -0.033333, "exit_price": 145.0, "days_held": 15, "sec": "Energy", "notes": "Dividend play", "screener": "https://www.screener.in/company/IOC/"}, {"row": 99, "sym": "MRPL", "co": "MRPL", "dt_str": "08 Feb 2026", "exit_str": "23 Feb 2026", "dt": "2026-02-08", "blo": 185.0, "t1": 190.0, "t2": 200.0, "t3": 220.0, "sl": 172.0, "res": "LOSS", "btgt": "SL", "pct": -0.07027, "exit_price": 172.0, "days_held": 15, "sec": "Energy", "notes": "GRM expansion", "screener": "https://www.screener.in/company/MRPL/"}];
+const OPENS  = [{"row": 13, "sym": "NBCC", "co": "NBCC", "dt_str": "24 Oct 2025", "exit_str": "Open", "dt": "2025-10-24", "blo": 100.0, "t1": 120.0, "t2": 125.0, "t3": null, "sl": 95.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.0308, "exit_price": null, "days_held": 227, "sec": "Real Estate", "notes": "Govt construction", "screener": "https://www.screener.in/company/NBCC/"}, {"row": 20, "sym": "SAGILITY", "co": "SAGILITY", "dt_str": "29 Oct 2025", "exit_str": "Open", "dt": "2025-10-29", "blo": 45.0, "t1": 50.0, "t2": 55.0, "t3": 60.0, "sl": 40.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.1335555556, "exit_price": null, "days_held": 222, "sec": "IT", "notes": "Healthcare BPO", "screener": "https://www.screener.in/company/SAGILITY/"}, {"row": 21, "sym": "CANFINHOME", "co": "CAN FIN HOMES", "dt_str": "29 Oct 2025", "exit_str": "Open", "dt": "2025-10-29", "blo": 850.0, "t1": 890.0, "t2": 1000.0, "t3": null, "sl": 800.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.03294117647, "exit_price": null, "days_held": 222, "sec": "NBFC", "notes": "Affordable housing", "screener": "https://www.screener.in/company/CANFINHOME/"}, {"row": 23, "sym": "DLINKINDIA", "co": "DLINK", "dt_str": "30 Oct 2025", "exit_str": "Open", "dt": "2025-10-30", "blo": 460.0, "t1": 525.0, "t2": 550.0, "t3": 600.0, "sl": 425.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.06217391304, "exit_price": null, "days_held": 221, "sec": "Telecom", "notes": "Network infra", "screener": "https://www.screener.in/company/DLINKINDIA/"}, {"row": 26, "sym": "UTKARSHBNK", "co": "UTKARSH BANK", "dt_str": "07 Nov 2025", "exit_str": "Open", "dt": "2025-11-07", "blo": 15.0, "t1": 16.0, "t2": 17.0, "t3": 18.0, "sl": 12.5, "res": "OPEN", "btgt": "OPEN", "pct": -0.1773333333, "exit_price": null, "days_held": 213, "sec": "Banking", "notes": "SFB expansion", "screener": "https://www.screener.in/company/UTKARSHBNK/"}, {"row": 27, "sym": "ASIANTILES", "co": "ASIAN TILES ", "dt_str": "10 Nov 2025", "exit_str": "Open", "dt": "2025-11-10", "blo": 60.0, "t1": 70.0, "t2": 75.0, "t3": null, "sl": 55.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.03, "exit_price": null, "days_held": 210, "sec": "Consumer", "notes": "Real estate linked", "screener": "https://www.screener.in/company/ASIANTILES/"}, {"row": 33, "sym": "PVRINOX", "co": "PVR", "dt_str": "17 Nov 2025", "exit_str": "Open", "dt": "2025-11-17", "blo": 1000.0, "t1": 1100.0, "t2": 1200.0, "t3": 1500.0, "sl": 950.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.0335, "exit_price": null, "days_held": 203, "sec": "Media", "notes": "Box office revival", "screener": "https://www.screener.in/company/PVRINOX/"}, {"row": 41, "sym": "PPLPHARMA", "co": "PPL PHARMA", "dt_str": "28 Nov 2025", "exit_str": "Open", "dt": "2025-11-28", "blo": 180.0, "t1": 200.0, "t2": 210.0, "t3": 240.0, "sl": 178.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.07916666667, "exit_price": null, "days_held": 192, "sec": "Pharma", "notes": "Generic export", "screener": "https://www.screener.in/company/PPLPHARMA/"}, {"row": 51, "sym": "PETRONET", "co": "PETRONET", "dt_str": "28 Dec 2025", "exit_str": "Open", "dt": "2025-12-28", "blo": 275.0, "t1": 320.0, "t2": 350.0, "t3": null, "sl": 250.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.026, "exit_price": null, "days_held": 162, "sec": "Energy", "notes": "LNG terminal", "screener": "https://www.screener.in/company/PETRONET/"}, {"row": 54, "sym": "MAMATA", "co": "MAMATA", "dt_str": "01 Jan 2026", "exit_str": "Open", "dt": "2026-01-01", "blo": 430.0, "t1": 460.0, "t2": 475.0, "t3": 500.0, "sl": 400.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.1558139535, "exit_price": null, "days_held": 158, "sec": "Packaging", "notes": "Export play", "screener": "https://www.screener.in/company/MAMATA/"}, {"row": 61, "sym": "NORTHARC", "co": "NORTHERN ARC", "dt_str": "06 Jan 2026", "exit_str": "Open", "dt": "2026-01-06", "blo": 250.0, "t1": 275.0, "t2": 290.0, "t3": 300.0, "sl": 225.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.1402, "exit_price": null, "days_held": 153, "sec": "NBFC", "notes": "Credit growth", "screener": "https://www.screener.in/company/NORTHARC/"}, {"row": 64, "sym": "TATATECH", "co": "TATA TECH", "dt_str": "07 Jan 2026", "exit_str": "Open", "dt": "2026-01-07", "blo": 640.0, "t1": 700.0, "t2": 740.0, "t3": 800.0, "sl": 625.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.213046875, "exit_price": null, "days_held": 152, "sec": "IT", "notes": "PLM demand", "screener": "https://www.screener.in/company/TATATECH/"}, {"row": 75, "sym": "BIOCON", "co": "BIOCON", "dt_str": "16 Jan 2026", "exit_str": "Open", "dt": "2026-01-16", "blo": 360.0, "t1": 380.0, "t2": 395.0, "t3": 420.0, "sl": 325.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.1329166667, "exit_price": null, "days_held": 143, "sec": "Pharma", "notes": "Biosimilar ramp", "screener": "https://www.screener.in/company/BIOCON/"}, {"row": 76, "sym": "INDHOTEL", "co": "INDIAN HOTELS", "dt_str": "16 Jan 2026", "exit_str": "Open", "dt": "2026-01-16", "blo": 645.0, "t1": 675.0, "t2": 725.0, "t3": null, "sl": 600.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.01085271318, "exit_price": null, "days_held": 143, "sec": "Hospitality", "notes": "Tourism boom", "screener": "https://www.screener.in/company/INDHOTEL/"}, {"row": 81, "sym": "COLPAL", "co": "Colgate-Palmolive", "dt_str": "25 Jan 2026", "exit_str": "Open", "dt": "2026-01-25", "blo": 2150.0, "t1": 2200.0, "t2": 2300.0, "t3": 2400.0, "sl": 2025.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.06846511628, "exit_price": null, "days_held": 134, "sec": "FMCG", "notes": "Premium mix", "screener": "https://www.screener.in/company/COLPAL/"}, {"row": 85, "sym": "FORTIS", "co": "Fortis Healthcare", "dt_str": "28 Jan 2026", "exit_str": "Open", "dt": "2026-01-28", "blo": 950.0, "t1": 1000.0, "t2": 1050.0, "t3": 1200.0, "sl": 900.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.03736842105, "exit_price": null, "days_held": 131, "sec": "Healthcare", "notes": "Hospital exp.", "screener": "https://www.screener.in/company/FORTIS/"}, {"row": 88, "sym": "BEL", "co": "BEL", "dt_str": "01 Feb 2026", "exit_str": "Open", "dt": "2026-02-01", "blo": 457.0, "t1": 480.0, "t2": 500.0, "t3": 525.0, "sl": 430.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.09781181619, "exit_price": null, "days_held": 127, "sec": "Defence", "notes": "Budget boost", "screener": "https://www.screener.in/company/BEL/"}, {"row": 102, "sym": "AJANTPHARM", "co": "Ajanta Pharma", "dt_str": "10 Feb 2026", "exit_str": "Open", "dt": "2026-02-10", "blo": 3000.0, "t1": 3300.0, "t2": 3800.0, "t3": 4000.0, "sl": 2800.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.01, "exit_price": null, "days_held": 118, "sec": "Pharma", "notes": "Branded generics", "screener": "https://www.screener.in/company/AJANTPHARM/"}, {"row": 116, "sym": "CHAMBLFERT", "co": "Chambal Fertilisers", "dt_str": "02 Mar 2026", "exit_str": "Open", "dt": "2026-03-02", "blo": 440.0, "t1": 500.0, "t2": 550.0, "t3": 600.0, "sl": 385.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.02034090909, "exit_price": null, "days_held": 98, "sec": "Chemicals", "notes": "Sector tailwind", "screener": "https://www.screener.in/company/CHAMBLFERT/"}, {"row": 120, "sym": "EMBDL", "co": "EMBDL", "dt_str": "08 Mar 2026", "exit_str": "Open", "dt": "2026-03-08", "blo": 40.0, "t1": 60.0, "t2": 100.0, "t3": 150.0, "sl": 35.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.4275, "exit_price": null, "days_held": 92, "sec": "Telecom", "notes": "Capex tailwind", "screener": "https://www.screener.in/company/EMBDL/"}, {"row": 129, "sym": "LAURUSLABS", "co": "Laurus Labs", "dt_str": "20 Mar 2026", "exit_str": "Open", "dt": "2026-03-20", "blo": 1000.0, "t1": 1175.0, "t2": 1200.0, "t3": 1225.0, "sl": 975.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.394, "exit_price": null, "days_held": 80, "sec": "Pharma", "notes": "CDMO ramp-up", "screener": "https://www.screener.in/company/LAURUSLABS/"}, {"row": 132, "sym": "UTIAMC", "co": "UTI AMC", "dt_str": "22 Mar 2026", "exit_str": "Open", "dt": "2026-03-22", "blo": 900.0, "t1": 1250.0, "t2": 1350.0, "t3": 1500.0, "sl": 700.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.01666666667, "exit_price": null, "days_held": 78, "sec": "AMC", "notes": "SIP growth", "screener": "https://www.screener.in/company/UTIAMC/"}, {"row": 133, "sym": "BIRLACABLE", "co": "Birla Cable", "dt_str": "23 Mar 2026", "exit_str": "Open", "dt": "2026-03-23", "blo": 156.0, "t1": 166.0, "t2": 172.0, "t3": 180.0, "sl": 155.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.363525641, "exit_price": null, "days_held": 77, "sec": "Telecom", "notes": "Infra build-out", "screener": "https://www.screener.in/company/BIRLACABLE/"}, {"row": 137, "sym": "ADANIENSOL", "co": "Adani Energy Solution", "dt_str": "01 Apr 2026", "exit_str": "Open", "dt": "2026-04-01", "blo": 1150.0, "t1": 1500.0, "t2": 1750.0, "t3": 2000.0, "sl": 600.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.3603478261, "exit_price": null, "days_held": 68, "sec": "Power", "notes": "Capex cycle", "screener": "https://www.screener.in/company/ADANIENSOL/"}, {"row": 139, "sym": "TATACONSUM", "co": "TATA CONSUMER", "dt_str": "11 May 2026", "exit_str": "Open", "dt": "2026-05-11", "blo": 1150.0, "t1": 1325.0, "t2": 1425.0, "t3": 1500.0, "sl": 1120.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.03834782609, "exit_price": null, "days_held": 28, "sec": "FMCG", "notes": "Premium FMCG", "screener": "https://www.screener.in/company/TATACONSUM/"}, {"row": 141, "sym": "medplus", "co": "Medplus", "dt_str": "18 May 2026", "exit_str": "Open", "dt": "2026-05-18", "blo": 900.0, "t1": 1025.0, "t2": 1100.0, "t3": 1150.0, "sl": 850.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.05005555556, "exit_price": null, "days_held": 21, "sec": "Healthcare", "notes": "Pharmacy chain", "screener": "https://www.screener.in/company/medplus/"}, {"row": 142, "sym": "Gland", "co": "Gland pharma", "dt_str": "18 May 2026", "exit_str": "Open", "dt": "2026-05-18", "blo": 2050.0, "t1": 2292.8, "t2": 2500.0, "t3": 2800.0, "sl": 1915.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.0956097561, "exit_price": null, "days_held": 21, "sec": "Pharma", "notes": "Injectable exports", "screener": "https://www.screener.in/company/Gland/"}, {"row": 143, "sym": "torntpharm", "co": "torrent pharma", "dt_str": "19 May 2026", "exit_str": "Open", "dt": "2026-05-19", "blo": 4400.0, "t1": 4750.0, "t2": 4850.0, "t3": 5000.0, "sl": 4200.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.002272727273, "exit_price": null, "days_held": 20, "sec": "Pharma", "notes": "Branded generics", "screener": "https://www.screener.in/company/torntpharm/"}, {"row": 144, "sym": "zyduslife", "co": "zydus life", "dt_str": "19 May 2026", "exit_str": "Open", "dt": "2026-05-19", "blo": 1000.0, "t1": 1100.0, "t2": 1150.0, "t3": 1200.0, "sl": 950.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.087, "exit_price": null, "days_held": 20, "sec": "Pharma", "notes": "US specialty pharma", "screener": "https://www.screener.in/company/zyduslife/"}, {"row": 145, "sym": "apollohosp", "co": "Apollo hospital", "dt_str": "21 May 2026", "exit_str": "Open", "dt": "2026-05-21", "blo": 7800.0, "t1": 8250.0, "t2": 8500.0, "t3": 8850.0, "sl": 7600.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.06987179487, "exit_price": null, "days_held": 18, "sec": "Healthcare", "notes": "Hospital expansion", "screener": "https://www.screener.in/company/apollohosp/"}, {"row": 146, "sym": "Timken", "co": "timken", "dt_str": "25 May 2026", "exit_str": "Open", "dt": "2026-05-25", "blo": 3750.0, "t1": 3800.0, "t2": 4000.0, "t3": 4250.0, "sl": 3400.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.04266666667, "exit_price": null, "days_held": 14, "sec": "Industrials", "notes": "Bearings demand", "screener": "https://www.screener.in/company/Timken/"}, {"row": 147, "sym": "BHEL", "co": "Bhel", "dt_str": "21 May 2026", "exit_str": "Open", "dt": "2026-05-21", "blo": 410.0, "t1": 425.0, "t2": 450.0, "t3": null, "sl": 395.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.06097560976, "exit_price": null, "days_held": 18, "sec": "Industrials", "notes": "PSU capex cycle", "screener": "https://www.screener.in/company/BHEL/"}, {"row": 148, "sym": "Edelweiss", "co": "Edelweiss", "dt_str": "26 May 2026", "exit_str": "Open", "dt": "2026-05-26", "blo": 100.0, "t1": 120.0, "t2": 125.0, "t3": null, "sl": 97.5, "res": "OPEN", "btgt": "OPEN", "pct": 0.07, "exit_price": null, "days_held": 13, "sec": "Finance", "notes": "Asset management", "screener": "https://www.screener.in/company/Edelweiss/"}, {"row": 149, "sym": "TATATECH", "co": "TATA TECH", "dt_str": "26 May 2026", "exit_str": "Open", "dt": "2026-05-26", "blo": 700.0, "t1": 800.0, "t2": 850.0, "t3": 900.0, "sl": 635.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.1090714286, "exit_price": null, "days_held": 13, "sec": "IT", "notes": "PLM demand", "screener": "https://www.screener.in/company/TATATECH/"}, {"row": 150, "sym": "Greavescot", "co": "Greaves cotton", "dt_str": "26 May 2026", "exit_str": "Open", "dt": "2026-05-26", "blo": 175.0, "t1": 181.5, "t2": 185.0, "t3": 190.0, "sl": 170.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.07205714286, "exit_price": null, "days_held": 13, "sec": "Auto", "notes": "EV transition", "screener": "https://www.screener.in/company/Greavescot/"}, {"row": 151, "sym": "Mindacorp", "co": "Mindacorp", "dt_str": "27 May 2026", "exit_str": "Open", "dt": "2026-05-27", "blo": 575.0, "t1": 650.0, "t2": 750.0, "t3": 900.0, "sl": 550.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.09565217391, "exit_price": null, "days_held": 12, "sec": "IT", "notes": "IT services", "screener": "https://www.screener.in/company/Mindacorp/"}, {"row": 152, "sym": "BajajFinsv", "co": "Bajaj Finserv", "dt_str": "27 May 2026", "exit_str": "Open", "dt": "2026-05-27", "blo": 1780.0, "t1": 1900.0, "t2": 1950.0, "t3": 2000.0, "sl": 1715.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.06421348315, "exit_price": null, "days_held": 12, "sec": "Finance", "notes": "Financial services", "screener": "https://www.screener.in/company/BajajFinsv/"}, {"row": 153, "sym": "INFY", "co": "INFY", "dt_str": "28 May 2026", "exit_str": "Open", "dt": "2026-05-28", "blo": 1160.0, "t1": 1250.0, "t2": 1300.0, "t3": 1400.0, "sl": 1110.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.02327586207, "exit_price": null, "days_held": 11, "sec": "IT", "notes": "IT deal wins", "screener": "https://www.screener.in/company/INFY/"}, {"row": 154, "sym": "BANDHANBNK", "co": "BANDHAN BANK", "dt_str": "29 May 2026", "exit_str": "Open", "dt": "2026-05-29", "blo": 200.0, "t1": 250.0, "t2": 275.0, "t3": 300.0, "sl": 162.0, "res": "OPEN", "btgt": "OPEN", "pct": 0.0131, "exit_price": null, "days_held": 10, "sec": "Banking", "notes": "MFI recovery", "screener": "https://www.screener.in/company/BANDHANBNK/"}, {"row": 155, "sym": "JSWENERGY", "co": "JSW ENERGY", "dt_str": "30 May 2026", "exit_str": "Open", "dt": "2026-05-30", "blo": 585.0, "t1": 625.0, "t2": 650.0, "t3": 700.0, "sl": 550.0, "res": "OPEN", "btgt": "OPEN", "pct": -0.03418803419, "exit_price": null, "days_held": 9, "sec": "Power", "notes": "Renewable push", "screener": "https://www.screener.in/company/JSWENERGY/"}];
+const PL     = [{"dt": "01 Apr 2026", "val": 1008140, "sym": "JINDALSTEEL", "pnl": 8140, "invest": 50000, "pct": 16.28, "res": "WIN", "running_ret": 0.81}, {"dt": "01 Feb 2026", "val": 1019098, "sym": "HINDZINC", "pnl": 10958, "invest": 50407, "pct": 21.74, "res": "WIN", "running_ret": 1.91}, {"dt": "01 Jan 2026", "val": 1022803, "sym": "GRASIM", "pnl": 3706, "invest": 50955, "pct": 7.27, "res": "WIN", "running_ret": 2.28}, {"dt": "01 Oct 2024", "val": 1021525, "sym": "HDFCBANK", "pnl": -1279, "invest": 51140, "pct": -2.5, "res": "LOSS", "running_ret": 2.15}, {"dt": "02 Apr 2026", "val": 1105957, "sym": "MTARTECH", "pnl": 84432, "invest": 51076, "pct": 165.31, "res": "WIN", "running_ret": 10.6}, {"dt": "02 Jan 2026", "val": 1137034, "sym": "BSE", "pnl": 31077, "invest": 55298, "pct": 56.2, "res": "WIN", "running_ret": 13.7}, {"dt": "02 Mar 2026", "val": 1153396, "sym": "IFCI", "pnl": 16362, "invest": 56852, "pct": 28.78, "res": "WIN", "running_ret": 15.34}, {"dt": "03 Dec 2025", "val": 1146989, "sym": "BBTC", "pnl": -6408, "invest": 57670, "pct": -11.11, "res": "LOSS", "running_ret": 14.7}, {"dt": "03 Mar 2026", "val": 1168742, "sym": "BHEL", "pnl": 21753, "invest": 57349, "pct": 37.93, "res": "WIN", "running_ret": 16.87}, {"dt": "03 Mar 2026", "val": 1183351, "sym": "GRAPHITE", "pnl": 14609, "invest": 58437, "pct": 25.0, "res": "WIN", "running_ret": 18.34}, {"dt": "03 Nov 2024", "val": 1181075, "sym": "TATAMOTORS", "pnl": -2276, "invest": 59168, "pct": -3.85, "res": "LOSS", "running_ret": 18.11}, {"dt": "04 Apr 2026", "val": 1190918, "sym": "PRAJIND", "pnl": 9842, "invest": 59054, "pct": 16.67, "res": "WIN", "running_ret": 19.09}, {"dt": "04 Dec 2025", "val": 1202402, "sym": "MRPL", "pnl": 11484, "invest": 59546, "pct": 19.29, "res": "WIN", "running_ret": 20.24}, {"dt": "04 Dec 2025", "val": 1200175, "sym": "AWL", "pnl": -2227, "invest": 60120, "pct": -3.7, "res": "LOSS", "running_ret": 20.02}, {"dt": "05 Apr 2026", "val": 1205475, "sym": "CPPLUS", "pnl": 5300, "invest": 60009, "pct": 8.83, "res": "WIN", "running_ret": 20.55}, {"dt": "07 Apr 2026", "val": 1214516, "sym": "NATCOPHARM", "pnl": 9041, "invest": 60274, "pct": 15.0, "res": "WIN", "running_ret": 21.45}, {"dt": "07 Jan 2026", "val": 1211320, "sym": "SWANCORP", "pnl": -3196, "invest": 60726, "pct": -5.26, "res": "LOSS", "running_ret": 21.13}, {"dt": "07 Mar 2026", "val": 1221608, "sym": "PIRAMALFIN", "pnl": 10287, "invest": 60566, "pct": 16.99, "res": "WIN", "running_ret": 22.16}, {"dt": "08 Apr 2026", "val": 1227954, "sym": "AMAGI", "pnl": 6346, "invest": 61080, "pct": 10.39, "res": "WIN", "running_ret": 22.8}, {"dt": "08 Apr 2026", "val": 1236503, "sym": "NMDC", "pnl": 8549, "invest": 61398, "pct": 13.92, "res": "WIN", "running_ret": 23.65}, {"dt": "08 May 2026", "val": 1243776, "sym": "MEESHO", "pnl": 7274, "invest": 61825, "pct": 11.76, "res": "WIN", "running_ret": 24.38}, {"dt": "09 Apr 2026", "val": 1292774, "sym": "STLTECH", "pnl": 48997, "invest": 62189, "pct": 78.79, "res": "WIN", "running_ret": 29.28}, {"dt": "09 Apr 2026", "val": 1306809, "sym": "BELRISE", "pnl": 14036, "invest": 64639, "pct": 21.71, "res": "WIN", "running_ret": 30.68}, {"dt": "09 Apr 2026", "val": 1328128, "sym": "THERMAX", "pnl": 21318, "invest": 65340, "pct": 32.63, "res": "WIN", "running_ret": 32.81}, {"dt": "09 Apr 2026", "val": 1340610, "sym": "GESHIP", "pnl": 12482, "invest": 66406, "pct": 18.8, "res": "WIN", "running_ret": 34.06}, {"dt": "09 Apr 2026", "val": 1348058, "sym": "DELHIVERY", "pnl": 7448, "invest": 67031, "pct": 11.11, "res": "WIN", "running_ret": 34.81}, {"dt": "09 Feb 2026", "val": 1340836, "sym": "BANKINDIA", "pnl": -7222, "invest": 67403, "pct": -10.71, "res": "LOSS", "running_ret": 34.08}, {"dt": "10 Apr 2026", "val": 1357597, "sym": "RECLTD", "pnl": 16760, "invest": 67042, "pct": 25.0, "res": "WIN", "running_ret": 35.76}, {"dt": "10 Apr 2026", "val": 1367496, "sym": "CUMMINSIND", "pnl": 9899, "invest": 67880, "pct": 14.58, "res": "WIN", "running_ret": 36.75}, {"dt": "10 Apr 2026", "val": 1384589, "sym": "TRENT", "pnl": 17094, "invest": 68375, "pct": 25.0, "res": "WIN", "running_ret": 38.46}, {"dt": "10 Jan 2026", "val": 1412281, "sym": "SATIN", "pnl": 27692, "invest": 69229, "pct": 40.0, "res": "WIN", "running_ret": 41.23}, {"dt": "10 Mar 2026", "val": 1423797, "sym": "BHARATFORG", "pnl": 11516, "invest": 70614, "pct": 16.31, "res": "WIN", "running_ret": 42.38}, {"dt": "10 Mar 2026", "val": 1434907, "sym": "ABSLMF", "pnl": 11111, "invest": 71190, "pct": 15.61, "res": "WIN", "running_ret": 43.49}, {"dt": "11 Dec 2025", "val": 1446865, "sym": "RATNAVEER", "pnl": 11958, "invest": 71745, "pct": 16.67, "res": "WIN", "running_ret": 44.69}, {"dt": "11 Mar 2026", "val": 1457794, "sym": "GLENMARK", "pnl": 10930, "invest": 72343, "pct": 15.11, "res": "WIN", "running_ret": 45.78}, {"dt": "11 Nov 2025", "val": 1456937, "sym": "JMFINANCIL", "pnl": -858, "invest": 72890, "pct": -1.18, "res": "LOSS", "running_ret": 45.69}, {"dt": "12 Dec 2025", "val": 1475149, "sym": "BHARATWIRE", "pnl": 18212, "invest": 72847, "pct": 25.0, "res": "WIN", "running_ret": 47.51}, {"dt": "12 Dec 2025", "val": 1481854, "sym": "PRICOLLTD", "pnl": 6705, "invest": 73757, "pct": 9.09, "res": "WIN", "running_ret": 48.19}, {"dt": "13 Apr 2026", "val": 1497183, "sym": "ANTELOPUS", "pnl": 15330, "invest": 74093, "pct": 20.69, "res": "WIN", "running_ret": 49.72}, {"dt": "13 Dec 2025", "val": 1507984, "sym": "ELGIEQUIP", "pnl": 10801, "invest": 74859, "pct": 14.43, "res": "WIN", "running_ret": 50.8}, {"dt": "13 Feb 2026", "val": 1514098, "sym": "TATASTEEL", "pnl": 6113, "invest": 75399, "pct": 8.11, "res": "WIN", "running_ret": 51.41}, {"dt": "13 Jan 2026", "val": 1548586, "sym": "JAMNAAUTO", "pnl": 34488, "invest": 75705, "pct": 45.56, "res": "WIN", "running_ret": 54.86}, {"dt": "13 Nov 2025", "val": 1544031, "sym": "JAICORPLTD", "pnl": -4555, "invest": 77429, "pct": -5.88, "res": "LOSS", "running_ret": 54.4}, {"dt": "14 Feb 2026", "val": 1541458, "sym": "IOC", "pnl": -2573, "invest": 77202, "pct": -3.33, "res": "LOSS", "running_ret": 54.15}, {"dt": "14 Jan 2026", "val": 1537228, "sym": "JSL", "pnl": -4230, "invest": 77073, "pct": -5.49, "res": "LOSS", "running_ret": 53.72}, {"dt": "16 Apr 2026", "val": 1566051, "sym": "COCHINSHIP", "pnl": 28823, "invest": 76861, "pct": 37.5, "res": "WIN", "running_ret": 56.61}, {"dt": "16 Jan 2026", "val": 1563377, "sym": "DAMCAPITAL", "pnl": -2674, "invest": 78303, "pct": -3.41, "res": "LOSS", "running_ret": 56.34}, {"dt": "17 Apr 2026", "val": 1571395, "sym": "TCS", "pnl": 8017, "invest": 78169, "pct": 10.26, "res": "WIN", "running_ret": 57.14}, {"dt": "17 Apr 2026", "val": 1583832, "sym": "BSE", "pnl": 12438, "invest": 78570, "pct": 15.83, "res": "WIN", "running_ret": 58.38}, {"dt": "17 Apr 2026", "val": 1597807, "sym": "DATAPATTNS", "pnl": 13975, "invest": 79192, "pct": 17.65, "res": "WIN", "running_ret": 59.78}, {"dt": "17 Jan 2026", "val": 1612524, "sym": "TITAN", "pnl": 14717, "invest": 79890, "pct": 18.42, "res": "WIN", "running_ret": 61.25}, {"dt": "17 Mar 2026", "val": 1639399, "sym": "ICICIAMC", "pnl": 26875, "invest": 80626, "pct": 33.33, "res": "WIN", "running_ret": 63.94}, {"dt": "17 Mar 2026", "val": 1644487, "sym": "POLYCAB", "pnl": 5088, "invest": 81970, "pct": 6.21, "res": "WIN", "running_ret": 64.45}, {"dt": "17 Mar 2026", "val": 1663072, "sym": "CORONA", "pnl": 18585, "invest": 82224, "pct": 22.6, "res": "WIN", "running_ret": 66.31}, {"dt": "17 Mar 2026", "val": 1687214, "sym": "UNIONBANK", "pnl": 24141, "invest": 83154, "pct": 29.03, "res": "WIN", "running_ret": 68.72}, {"dt": "19 Feb 2026", "val": 1690094, "sym": "TATASTEEL", "pnl": 2881, "invest": 84361, "pct": 3.41, "res": "WIN", "running_ret": 69.01}, {"dt": "20 Apr 2026", "val": 1715446, "sym": "ANGELONE", "pnl": 25351, "invest": 84505, "pct": 30.0, "res": "WIN", "running_ret": 71.54}, {"dt": "20 Apr 2026", "val": 1732600, "sym": "CHENNPETRO", "pnl": 17154, "invest": 85772, "pct": 20.0, "res": "WIN", "running_ret": 73.26}, {"dt": "20 Jan 2026", "val": 1731225, "sym": "RELIANCE", "pnl": -1375, "invest": 86630, "pct": -1.59, "res": "LOSS", "running_ret": 73.12}, {"dt": "20 Oct 2024", "val": 1728752, "sym": "INFY", "pnl": -2473, "invest": 86561, "pct": -2.86, "res": "LOSS", "running_ret": 72.88}, {"dt": "21 Apr 2026", "val": 1742400, "sym": "APOLLOMICR", "pnl": 13648, "invest": 86438, "pct": 15.79, "res": "WIN", "running_ret": 74.24}, {"dt": "21 Jan 2026", "val": 1746360, "sym": "MINDTECK", "pnl": 3960, "invest": 87120, "pct": 4.55, "res": "LOSS", "running_ret": 74.64}, {"dt": "21 Jan 2026", "val": 1743085, "sym": "POONAWALLA", "pnl": -3274, "invest": 87318, "pct": -3.75, "res": "LOSS", "running_ret": 74.31}, {"dt": "21 Mar 2026", "val": 1747673, "sym": "IRFC", "pnl": 4587, "invest": 87154, "pct": 5.26, "res": "WIN", "running_ret": 74.77}, {"dt": "22 Dec 2025", "val": 1766023, "sym": "PNBHOUSING", "pnl": 18351, "invest": 87384, "pct": 21.0, "res": "WIN", "running_ret": 76.6}, {"dt": "22 Jan 2026", "val": 1762627, "sym": "SAMHI", "pnl": -3396, "invest": 88301, "pct": -3.85, "res": "LOSS", "running_ret": 76.26}, {"dt": "22 Jan 2026", "val": 1759894, "sym": "ARSSBL", "pnl": -2733, "invest": 88131, "pct": -3.1, "res": "LOSS", "running_ret": 75.99}, {"dt": "22 Mar 2026", "val": 1786292, "sym": "IREDA", "pnl": 26398, "invest": 87995, "pct": 30.0, "res": "WIN", "running_ret": 78.63}, {"dt": "23 Apr 2026", "val": 1793825, "sym": "NMDC", "pnl": 7533, "invest": 89315, "pct": 8.43, "res": "WIN", "running_ret": 79.38}, {"dt": "23 Dec 2025", "val": 1821181, "sym": "HINDALCO", "pnl": 27356, "invest": 89691, "pct": 30.5, "res": "WIN", "running_ret": 82.12}, {"dt": "23 Feb 2026", "val": 1814782, "sym": "MRPL", "pnl": -6399, "invest": 91059, "pct": -7.03, "res": "LOSS", "running_ret": 81.48}, {"dt": "23 Jan 2026", "val": 1828393, "sym": "MOSCHIP", "pnl": 13611, "invest": 90739, "pct": 15.0, "res": "WIN", "running_ret": 82.84}, {"dt": "23 Nov 2025", "val": 1834727, "sym": "CREDITACC", "pnl": 6334, "invest": 91420, "pct": 6.93, "res": "WIN", "running_ret": 83.47}, {"dt": "23 Nov 2025", "val": 1846194, "sym": "SHANTIGOLD", "pnl": 11467, "invest": 91736, "pct": 12.5, "res": "WIN", "running_ret": 84.62}, {"dt": "24 Apr 2026", "val": 1860232, "sym": "JINDALSTEEL", "pnl": 14038, "invest": 92310, "pct": 15.21, "res": "WIN", "running_ret": 86.02}, {"dt": "24 Apr 2026", "val": 1876269, "sym": "OBEROIRLTY", "pnl": 16037, "invest": 93012, "pct": 17.24, "res": "WIN", "running_ret": 87.63}, {"dt": "24 Apr 2026", "val": 1945609, "sym": "RENUKA", "pnl": 69340, "invest": 93813, "pct": 73.91, "res": "WIN", "running_ret": 94.56}, {"dt": "24 Dec 2025", "val": 1945609, "sym": "POLYMED", "pnl": 0, "invest": 97280, "pct": 0.0, "res": "WIN", "running_ret": 94.56}, {"dt": "24 Dec 2025", "val": 1975541, "sym": "YATHARTH", "pnl": 29932, "invest": 97280, "pct": 30.77, "res": "WIN", "running_ret": 97.55}, {"dt": "24 Dec 2025", "val": 1987100, "sym": "GMRAIRPORT", "pnl": 11559, "invest": 98777, "pct": 11.7, "res": "WIN", "running_ret": 98.71}, {"dt": "24 Mar 2026", "val": 1994243, "sym": "LGEINDIA", "pnl": 7143, "invest": 99355, "pct": 7.19, "res": "WIN", "running_ret": 99.42}, {"dt": "24 Mar 2026", "val": 2004215, "sym": "NSDL", "pnl": 9971, "invest": 99712, "pct": 10.0, "res": "WIN", "running_ret": 100.42}, {"dt": "25 Apr 2026", "val": 2017450, "sym": "SONACOMS", "pnl": 13235, "invest": 100211, "pct": 13.21, "res": "WIN", "running_ret": 101.74}, {"dt": "25 Dec 2025", "val": 2013911, "sym": "PNB", "pnl": -3539, "invest": 100872, "pct": -3.51, "res": "LOSS", "running_ret": 101.39}, {"dt": "25 Dec 2025", "val": 2009772, "sym": "POLYMED", "pnl": -4138, "invest": 100696, "pct": -4.11, "res": "LOSS", "running_ret": 100.98}, {"dt": "25 Feb 2026", "val": 2034895, "sym": "MAHABANK", "pnl": 25122, "invest": 100489, "pct": 25.0, "res": "WIN", "running_ret": 103.49}, {"dt": "26 Apr 2026", "val": 2045420, "sym": "HDFCBANK", "pnl": 10525, "invest": 101745, "pct": 10.34, "res": "WIN", "running_ret": 104.54}, {"dt": "26 Dec 2025", "val": 2070783, "sym": "UJJIVANSFB", "pnl": 25363, "invest": 102271, "pct": 24.8, "res": "WIN", "running_ret": 107.08}, {"dt": "26 Mar 2026", "val": 2088744, "sym": "BAJAJ-AUTO", "pnl": 17961, "invest": 103539, "pct": 17.35, "res": "WIN", "running_ret": 108.87}, {"dt": "26 Mar 2026", "val": 2110294, "sym": "ASTRAL", "pnl": 21551, "invest": 104437, "pct": 20.63, "res": "WIN", "running_ret": 111.03}, {"dt": "27 Dec 2025", "val": 2254340, "sym": "AEROFLEX", "pnl": 144045, "invest": 105515, "pct": 136.52, "res": "WIN", "running_ret": 125.43}, {"dt": "27 Dec 2025", "val": 2262391, "sym": "GRSE", "pnl": 8051, "invest": 112717, "pct": 7.14, "res": "WIN", "running_ret": 126.24}, {"dt": "27 Mar 2026", "val": 2275385, "sym": "SAMMANCAP", "pnl": 12993, "invest": 113120, "pct": 11.49, "res": "WIN", "running_ret": 127.54}, {"dt": "28 Apr 2026", "val": 2299517, "sym": "OLA", "pnl": 24133, "invest": 113769, "pct": 21.21, "res": "WIN", "running_ret": 129.95}, {"dt": "28 Feb 2026", "val": 2313133, "sym": "DMART", "pnl": 13616, "invest": 114976, "pct": 11.84, "res": "WIN", "running_ret": 131.31}, {"dt": "28 Feb 2026", "val": 2323976, "sym": "BAJAJ-AUTO", "pnl": 10843, "invest": 115657, "pct": 9.38, "res": "WIN", "running_ret": 132.4}, {"dt": "28 Mar 2026", "val": 2381056, "sym": "PRECWIRE", "pnl": 57080, "invest": 116199, "pct": 49.12, "res": "WIN", "running_ret": 138.11}, {"dt": "29 Mar 2026", "val": 2392439, "sym": "NTPC", "pnl": 11383, "invest": 119053, "pct": 9.56, "res": "WIN", "running_ret": 139.24}, {"dt": "29 Mar 2026", "val": 2398546, "sym": "HCLTECH", "pnl": 6107, "invest": 119622, "pct": 5.11, "res": "WIN", "running_ret": 139.85}, {"dt": "29 Nov 2024", "val": 2405685, "sym": "SUNPHARMA", "pnl": 7139, "invest": 119927, "pct": 5.95, "res": "WIN", "running_ret": 140.57}, {"dt": "29 Nov 2025", "val": 2412760, "sym": "NOCIL", "pnl": 7076, "invest": 120284, "pct": 5.88, "res": "WIN", "running_ret": 141.28}, {"dt": "30 Dec 2025", "val": 2408739, "sym": "PARADEEP", "pnl": -4021, "invest": 120638, "pct": -3.33, "res": "LOSS", "running_ret": 140.87}, {"dt": "30 Dec 2025", "val": 2401654, "sym": "NFL", "pnl": -7085, "invest": 120437, "pct": -5.88, "res": "LOSS", "running_ret": 140.17}, {"dt": "30 Dec 2025", "val": 2395650, "sym": "JISLJALEQS", "pnl": -6004, "invest": 120083, "pct": -5.0, "res": "LOSS", "running_ret": 139.57}, {"dt": "31 Dec 2025", "val": 2400641, "sym": "VBL", "pnl": 4991, "invest": 119783, "pct": 4.17, "res": "WIN", "running_ret": 140.06}, {"dt": "31 Jan 2026", "val": 2393044, "sym": "DALBHARAT", "pnl": -7597, "invest": 120032, "pct": -6.33, "res": "LOSS", "running_ret": 139.3}, {"dt": "31 Jan 2026", "val": 2386747, "sym": "APOLLOTYRE", "pnl": -6298, "invest": 119652, "pct": -5.26, "res": "LOSS", "running_ret": 138.67}, {"dt": "31 Mar 2026", "val": 2426526, "sym": "JARO", "pnl": 39779, "invest": 119337, "pct": 33.33, "res": "WIN", "running_ret": 142.65}, {"dt": "31 May 2026", "val": 2565184, "sym": "JPPOWER", "pnl": 138659, "invest": 121326, "pct": 114.29, "res": "WIN", "running_ret": 156.52}, {"dt": "31 May 2026", "val": 2600527, "sym": "JARO", "pnl": 35343, "invest": 128259, "pct": 27.56, "res": "WIN", "running_ret": 160.05}, {"dt": "31 May 2026", "val": 2629419, "sym": "KPL", "pnl": 28892, "invest": 130026, "pct": 22.22, "res": "WIN", "running_ret": 162.94}];
+const TL     = {"tl_months": ["2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"], "tl_our": [1000000, 1728752, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2405685, 2412760, 2400641, 2386747, 2323976, 2426526, 2299517, 2629419, 2629419], "tl_nifty": [1000000, 963483, 912234, 923128, 916576, 897930, 865909, 911731, 931889, 935688, 962785, 978252, 1000543, 938324, 926772, 916615, 897891, 883664, 917119, 914522, 957513, 969530], "tl_our_ret": [0.0, 72.9, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 140.6, 141.3, 140.1, 138.7, 132.4, 142.7, 130.0, 162.9, 162.9], "tl_nifty_ret": [0.0, -3.7, -8.8, -7.7, -8.3, -10.2, -13.4, -8.8, -6.8, -6.4, -3.7, -2.2, 0.1, -6.2, -7.3, -8.3, -10.2, -11.6, -8.3, -8.5, -4.2, -3.0]};
+const STATS  = {"total": 151, "total_closed": 111, "wins": 86, "losses": 25, "opens": 40, "wr": 77.5, "avg_win": 24.0, "avg_loss": -4.3, "best_pct": 165.3, "best_sym": "MTARTECH", "final_portfolio": 2629419, "total_return": 162.9, "nifty_final": 969530, "nifty_return": -3.0, "initial": 1000000, "outperformance": 1659888, "t3_count": 35, "t3_rate": 40.7, "t1_count": 34, "t2_count": 16};
+
+// Google Sheets auto-fetch URL (paste your Apps Script URL here after setup)
+const GOOGLE_SHEETS_URL = '';
+
+// ════════ PASSWORDS — 1 per client ════════
+// Add: "password": "Client Name"
+// Remove to revoke instantly, then redeploy
+const PASSWORDS = {
+  "piyans2025":  "Piyans (Owner)",
+  "member001":   "Client 1",
+  "member002":   "Client 2",
+  "jc2026":      "Client 3",
+  "premium2026": "Client 4",
+  "vip001":      "VIP Client",
+};
+const ADMIN_PW = "jcadmin2026";
+
+// ════════ SECTOR COLOURS ════════
+const SC = {
+  "Banking":"#3b82f6","IT":"#8b5cf6","Pharma":"#ec4899","Defence":"#f59e0b",
+  "Metals":"#8b9467","Energy":"#f97316","Auto":"#14b8a6","NBFC":"#06b6d4",
+  "AMC":"#a855f7","Finance":"#0ea5e9","Power":"#eab308","Consumer":"#f43f5e",
+  "Industrials":"#64748b","Chemicals":"#84cc16","Telecom":"#22d3ee",
+  "Logistics":"#fb923c","Retail":"#e879f9","Healthcare":"#34d399",
+  "Cement":"#a3a3a3","Real Estate":"#fb7185","Hospitality":"#fbbf24",
+  "Agri":"#4ade80","Infrastructure":"#38bdf8","FMCG":"#f472b6",
+  "Media":"#c084fc","Packaging":"#a78bfa","Broking":"#67e8f9",
+  "Auto Ancillary":"#5eead4","Education":"#fdba74","Others":"#94a3b8"
+};
+
+const CD = {
+  responsive:true,
+  plugins:{legend:{labels:{color:'#94a3b8',font:{family:"'Plus Jakarta Sans',sans-serif",size:11},boxWidth:14}}},
+  scales:{
+    x:{ticks:{color:'#4b5563',font:{size:10},maxTicksLimit:12},grid:{color:'rgba(255,255,255,0.04)'}},
+    y:{ticks:{color:'#4b5563',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}}
+  }
+};
+
+// ════════ HELPERS ════════
+function fp(v){
+  if(v===null||v===undefined||String(v).trim()===''||v==='–'||v==='-')return'–';
+  const n=Number(v);return isNaN(n)?String(v):'₹'+n.toLocaleString('en-IN',{maximumFractionDigits:0});
+}
+function pp(v){
+  if(v===null||v===undefined)return'–';
+  const n=Number(v);return isNaN(n)?'–':(n>=0?'+':'')+(n*100).toFixed(1)+'%';
+}
+function bw(v){return Math.min(Math.round(Math.abs(Number(v)||0)*100*.45),95);}
+function sp(s){const c=SC[s]||'#94a3b8';return`<span class="spill" style="border-color:${c}30;color:${c}">${s||'–'}</span>`;}
+function tb(t){if(!t||t==='OPEN')return'';return`<span class="tbg t${t}">${t}</span>`;}
+function ep(t){return t.btgt==='T1'?t.t1:t.btgt==='T2'?t.t2:t.btgt==='T3'?t.t3:t.btgt==='SL'?t.sl:null;}
+function fmt(n,dec=2){return Number(n).toLocaleString('en-IN',{maximumFractionDigits:dec});}
+
+// ════════ UPDATE STATS IN DOM ════════
+function updateStats(){
+  document.getElementById('k-total').textContent=STATS.total;
+  document.getElementById('k-wins').textContent=STATS.wins;
+  document.getElementById('k-losses').textContent=STATS.losses;
+  document.getElementById('k-wr').textContent=STATS.wr+'%';
+  document.getElementById('k-avgw').textContent='+'+STATS.avg_win+'%';
+  document.getElementById('k-best').textContent='+'+STATS.best_pct+'%';
+  document.getElementById('hl-w').textContent=STATS.wins;
+  document.getElementById('hl-l').textContent=STATS.losses;
+  document.getElementById('qb-opens').textContent=STATS.opens;
+  document.getElementById('modal-count').textContent=STATS.opens;
+  document.getElementById('open-badge').textContent=STATS.opens+' Active';
+  document.getElementById('open-tag').textContent=STATS.opens+' Active';
+  document.getElementById('wins-tag').textContent=STATS.wins+' Winners';
+  document.getElementById('loss-tag').textContent=STATS.losses+' SL Exits';
+  document.getElementById('pf-v').textContent='₹'+fmt(STATS.final_portfolio,0);
+  document.getElementById('pf-r').textContent='+'+STATS.total_return+'%';
+  document.getElementById('pf-p').textContent='+₹'+fmt(STATS.final_portfolio-STATS.initial,0);
+  document.getElementById('pf-e').textContent='+₹'+fmt(STATS.outperformance,0);
+}
+
+// ════════ TICKER (live % via Yahoo) ════════
+function buildTicker(){
+  const items=[...WINS.slice(0,20),...LOSSES.slice(0,5)];
+  document.getElementById('tickerEl').innerHTML=[...items,...items].map(t=>`
+    <div class="ti">
+      <a href="${t.screener||'https://www.screener.in/company/'+t.sym+'/'}" target="_blank">
+        <span class="ts">${t.sym}</span>
+      </a>
+      <span class="tp ${(t.pct||0)<0?'dn':'up'}">${pp(t.pct)}</span>
+      <span class="tc" data-tick="${t.sym}">–</span>
+    </div>`).join('');
+}
+
+// ════════ BLUR PREVIEW ROWS ════════
+function buildBlur(){
+  const rows=[
+    ["ADANI★★",850,940,1020,1150,800,"Power","+2.3%"],
+    ["RELIANCE★",2200,2380,2480,2650,2100,"Energy","+1.1%"],
+    ["HDFC★★★",1650,1750,1820,1950,1580,"Banking","+0.8%"],
+    ["NTPC★★",380,410,435,470,355,"Power","+3.2%"],
+    ["TATA★★★",780,840,900,970,730,"Auto","-0.4%"],
+    ["METALS★★",480,520,560,610,450,"Metals","+1.7%"],
+    ["PHARMA★★",1100,1200,1280,1400,1040,"Pharma","+2.1%"],
+    ["NBFC★★★",320,360,400,450,295,"NBFC","+0.9%"],
+    ["DEFENCE★",2800,3100,3400,3800,2600,"Defence","+4.1%"],
+    ["INFRA★★",125,140,155,175,115,"Infrastructure","+1.5%"],
+    ["FMCG★★",2400,2600,2750,2950,2250,"FMCG","-0.2%"],
+    ["IT★★★",1900,2050,2180,2350,1800,"IT","+2.8%"],
+  ];
+  document.getElementById('blurRows').innerHTML=rows.map((r,i)=>{
+    const up=r[7].startsWith('+');
+    return`<tr>
+      <td style="color:var(--tx3)">#${i+1}</td>
+      <td><div class="sym">${r[0]}</div></td>
+      <td>${sp(r[6])}</td>
+      <td class="dc">** *** 2026</td>
+      <td>₹${r[1].toLocaleString()}</td>
+      <td style="color:var(--gr);font-weight:700">₹${r[2].toLocaleString()}</td>
+      <td style="color:var(--gr)">₹${r[3].toLocaleString()}</td>
+      <td style="color:var(--gr)">₹${r[4].toLocaleString()}</td>
+      <td style="color:var(--re);font-weight:700">₹${r[5].toLocaleString()}</td>
+      <td class="${up?'ls-up':'ls-dn'}">${r[7]}</td>
+    </tr>`;}).join('');
+}
+
+// ════════ DEVICE FINGERPRINT ════════
+function getFP(){
+  const s=[navigator.userAgent,screen.width+'x'+screen.height,Intl.DateTimeFormat().resolvedOptions().timeZone,navigator.language].join('|');
+  let h=0;for(let i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}
+  return Math.abs(h).toString(36);
+}
+
+// ════════ UNLOCK ════════
+function tryUnlock(){
+  const pw=document.getElementById('pwIn').value.trim();
+  const err=document.getElementById('uErr');
+  err.style.display='none';
+  if(!PASSWORDS[pw]){
+    err.textContent='❌ Wrong password. DM @piyansjain_ to get access.';
+    err.style.display='block';
+    showToast('❌ Wrong password',true);
+    return;
+  }
+  const fp=getFP();
+  const stored=localStorage.getItem('jc_fp_'+pw);
+  if(stored&&stored!==fp){
+    err.textContent='❌ This password is already active on another device. DM Piyans to reset it.';
+    err.style.display='block';
+    showToast('❌ Already used on another device',true);
+    return;
+  }
+  localStorage.setItem('jc_fp_'+pw,fp);
+  localStorage.setItem('jc_pw',pw);
+  sessionStorage.setItem('jc_unlocked','1');
+  closeModal();
+  doUnlock();
+  showToast('🎉 Welcome '+PASSWORDS[pw]+'! All '+STATS.opens+' live trades unlocked.');
+}
+
+function doUnlock(){
+  document.getElementById('lockTeaser').style.display='none';
+  const sec=document.getElementById('openSection');
+  sec.classList.add('vis');
+  renderOpen();
+  startRefresh();
+}
+function doLock(){
+  document.getElementById('openSection').classList.remove('vis');
+  document.getElementById('lockTeaser').style.display='block';
+  sessionStorage.removeItem('jc_unlocked');
+  showToast('🔒 Trades locked',false);
+}
+
+function openModal(){document.getElementById('pwModal').classList.add('open');setTimeout(()=>document.getElementById('pwIn').focus(),200);}
+function closeModal(){document.getElementById('pwModal').classList.remove('open');}
+document.getElementById('pwModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('pwIn').addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock();});
+
+// Auto-restore on page load
+window.addEventListener('DOMContentLoaded',()=>{
+  const saved=localStorage.getItem('jc_pw');
+  if(saved&&PASSWORDS[saved]&&localStorage.getItem('jc_fp_'+saved)===getFP()){
+    doUnlock();
+  }
+  // Try Google Sheets live data if URL set
+  if(GOOGLE_SHEETS_URL){fetchFromSheets();}
+});
+
+// ════════ GOOGLE SHEETS FETCH (when URL set) ════════
+async function fetchFromSheets(){
+  try{
+    const res=await fetch(GOOGLE_SHEETS_URL);
+    const data=await res.json();
+    // When live data available, re-render tables
+    console.log('Google Sheets data loaded:',data.total,'trades');
+    showToast('📊 Live data loaded from Google Sheets',false);
+  }catch(e){console.log('Sheets fetch error:',e);}
+}
+
+// ════════ RENDER TABLES ════════
+function renderWins(filter='all'){
+  const data=filter==='all'?WINS:WINS.filter(w=>w.btgt===filter);
+  document.getElementById('winsBody').innerHTML=data.map((w,i)=>`
+    <tr>
+      <td style="color:var(--tx3);font-size:10px">#${i+1}</td>
+      <td class="sc">
+        <div class="sym"><a href="${w.screener||'https://www.screener.in/company/'+w.sym+'/'}" target="_blank">${w.sym}</a></div>
+        <div class="co">${w.co||''}</div>
+        <div class="nt">${w.notes||''}</div>
+      </td>
+      <td>${sp(w.sec)}</td>
+      <td class="dc">${w.dt_str||'–'}</td>
+      <td class="dc ex">${w.exit_str||'–'}</td>
+      <td class="pc">${fp(w.blo)}</td>
+      <td class="pc" style="color:var(--gr);font-weight:600">${fp(ep(w))}</td>
+      <td>${tb(w.btgt)}</td>
+      <td class="pn pu"><span class="pv">${pp(w.pct)}</span><div class="pbg"><div class="pb" style="width:${bw(w.pct)}%;background:linear-gradient(90deg,#16a34a,#22c55e)"></div></div></td>
+    </tr>`).join('');
+}
+
+function renderLosses(){
+  document.getElementById('lossBody').innerHTML=LOSSES.map((l,i)=>`
+    <tr>
+      <td style="color:var(--tx3);font-size:10px">#${i+1}</td>
+      <td class="sc">
+        <div class="sym" style="color:var(--re)"><a href="${l.screener||'https://www.screener.in/company/'+l.sym+'/'}" target="_blank" style="color:var(--re)">${l.sym}</a></div>
+        <div class="co">${l.co||''}</div>
+        <div class="nt">${l.notes||''}</div>
+      </td>
+      <td>${sp(l.sec)}</td>
+      <td class="dc">${l.dt_str||'–'}</td>
+      <td class="dc exl">${l.exit_str||'–'}</td>
+      <td class="pc">${fp(l.blo)}</td>
+      <td class="pc" style="color:var(--re)">${fp(l.sl)}</td>
+      <td>${tb('SL')}</td>
+      <td class="pn pd"><span class="pv">${pp(l.pct)}</span><div class="pbg"><div class="pb" style="width:${bw(l.pct)}%;background:linear-gradient(90deg,#dc2626,#f87171)"></div></div></td>
+    </tr>`).join('');
+}
+
+function renderOpen(){
+  document.getElementById('openBody').innerHTML=OPENS.map((o,i)=>`
+    <tr>
+      <td style="color:var(--tx3);font-size:10px">#${i+1}</td>
+      <td class="sc">
+        <div class="sym" style="color:var(--gd)"><a href="${o.screener||'https://www.screener.in/company/'+o.sym+'/'}" target="_blank" style="color:var(--gd)">${o.sym}</a></div>
+        <div class="co">${o.co||''}</div>
+      </td>
+      <td>${sp(o.sec)}</td>
+      <td class="dc">${o.dt_str||'–'}</td>
+      <td class="pc">${fp(o.blo)}</td>
+      <td style="color:var(--gr);font-size:12px;font-weight:700">${fp(o.t1)}</td>
+      <td style="color:var(--gr);font-size:12px">${o.t2?fp(o.t2):'–'}</td>
+      <td style="color:var(--gr);font-size:12px">${o.t3?fp(o.t3):'–'}</td>
+      <td style="color:var(--re);font-size:12px;font-weight:700">${fp(o.sl)}</td>
+      <td class="dc">${o.days_held||'–'}d</td>
+      <td class="ls-loading" id="cmp_${o.sym}">Loading…</td>
+      <td class="ls-loading" id="chg_${o.sym}">–</td>
+    </tr>`).join('');
+}
+
+function fw(f,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');renderWins(f);
+}
+
+// ════════ LIVE PRICE REFRESH (every 30s) ════════
+let refreshTimer=null,countdown=30;
+function startRefresh(){
+  if(refreshTimer)return;
+  fetchPrices();
+  refreshTimer=setInterval(()=>{
+    countdown--;
+    if(countdown<=0){countdown=30;fetchPrices();}
+    const el=document.getElementById('refresh-lbl');
+    if(el)el.textContent=countdown===30?'Just refreshed ✓':`Next refresh in ${countdown}s`;
+  },1000);
+}
+
+async function fetchPrices(){
+  const syms=OPENS.map(o=>o.sym+'.NS');
+  const batches=[syms.slice(0,15),syms.slice(15,30)];
+  for(const batch of batches){
+    if(!batch.length)continue;
+    try{
+      const q=batch.join(',');
+      const url=`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${q}&fields=regularMarketPrice,regularMarketChangePercent,regularMarketChange`;
+      const res=await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+      const data=await res.json();
+      (data?.quoteResponse?.result||[]).forEach(q=>{
+        const sym=q.symbol.replace('.NS','');
+        const price=q.regularMarketPrice;
+        const chgPct=q.regularMarketChangePercent;
+        // Update CMP
+        const cmpEl=document.getElementById('cmp_'+sym);
+        if(cmpEl){cmpEl.textContent='₹'+fmt(price,2);cmpEl.className=chgPct>=0?'ls-up':'ls-dn';}
+        // Update % change
+        const chgEl=document.getElementById('chg_'+sym);
+        if(chgEl){
+          const sign=chgPct>=0?'+':'';
+          chgEl.textContent=sign+chgPct.toFixed(2)+'%';
+          chgEl.className=chgPct>=0?'ls-up':'ls-dn';
+        }
+        // Update ticker
+        document.querySelectorAll(`[data-tick="${sym}"]`).forEach(el=>{
+          const sign=chgPct>=0?'+':'';
+          el.textContent=sign+chgPct.toFixed(1)+'%';
+          el.className='tc '+(chgPct>=0?'ls-up':'ls-dn');
+        });
+      });
+    }catch(e){}
+  }
+}
+
+// ════════ CHARTS ════════
+function buildCharts(){
+  // 1. Portfolio vs Nifty
+  new Chart(document.getElementById('portChart'),{
+    type:'line',
+    data:{labels:TL.tl_months,datasets:[
+      {label:'Our Portfolio',data:TL.tl_our,borderColor:'#f0c040',backgroundColor:'rgba(240,192,64,.07)',tension:.4,borderWidth:2.5,pointRadius:3,pointBackgroundColor:'#f0c040',fill:true},
+      {label:'Nifty 50',data:TL.tl_nifty,borderColor:'#f87171',backgroundColor:'rgba(248,113,113,.04)',tension:.4,borderWidth:2,pointRadius:2,fill:true,borderDash:[5,3]}
+    ]},
+    options:{...CD,plugins:{...CD.plugins,tooltip:{callbacks:{label:c=>'₹'+Math.round(c.parsed.y).toLocaleString('en-IN')}}},
+      scales:{...CD.scales,y:{...CD.scales.y,ticks:{...CD.scales.y.ticks,callback:v=>'₹'+(v/100000).toFixed(1)+'L'}}}}
+  });
+
+  // 2. Outcome donut (T1/T2/T3 + SL)
+  const t1c=WINS.filter(w=>w.btgt==='T1').length;
+  const t2c=WINS.filter(w=>w.btgt==='T2').length;
+  const t3c=WINS.filter(w=>w.btgt==='T3').length;
+  const slc=LOSSES.length;
+  new Chart(document.getElementById('outcomeChart'),{
+    type:'doughnut',
+    data:{labels:[`T1 Hit (${t1c})`,`T2 Hit (${t2c})`,`T3 Hit 🏆 (${t3c})`,`SL Exit (${slc})`],
+      datasets:[{data:[t1c,t2c,t3c,slc],backgroundColor:['#22c55e','#16a34a','#15803d','#ef4444'],borderColor:'#0d1117',borderWidth:3}]},
+    options:{responsive:true,cutout:'62%',plugins:{...CD.plugins,legend:{...CD.plugins.legend,position:'bottom'},
+      tooltip:{callbacks:{label:c=>`${c.label}: ${c.parsed} (${(c.parsed/109*100).toFixed(1)}%)`}}}}
+  });
+
+  // 3. Trade-by-trade journey
+  const ptColors=PL.map(e=>e.res==='WIN'?'rgba(34,197,94,.9)':'rgba(248,113,113,.9)');
+  new Chart(document.getElementById('evtChart'),{
+    type:'line',
+    data:{labels:PL.map((_,i)=>i+1),datasets:[
+      {label:'Portfolio',data:PL.map(e=>e.val),borderColor:'#f0c040',backgroundColor:'rgba(240,192,64,.07)',tension:.3,borderWidth:2,pointRadius:4,pointBackgroundColor:ptColors,pointBorderColor:ptColors,fill:true}
+    ]},
+    options:{...CD,
+      plugins:{...CD.plugins,tooltip:{callbacks:{
+        title:c=>{const e=PL[c[0].dataIndex];return(e.sym||'')+(e.res==='WIN'?' ✅':' ❌');},
+        label:c=>{const e=PL[c.dataIndex];return[
+          'Portfolio: ₹'+Math.round(e.val).toLocaleString('en-IN'),
+          'P&L: ₹'+(e.pnl>=0?'+':'')+Math.round(e.pnl).toLocaleString('en-IN'),
+          'Trade return: '+(e.pct>=0?'+':'')+e.pct+'%',
+          'Running return: +'+(e.running_ret||0).toFixed(1)+'%'
+        ];}
+      }}},
+      scales:{...CD.scales,
+        x:{...CD.scales.x,ticks:{display:false},title:{display:true,text:'← 111 exits | 🟢 Win  🔴 SL exit | Hover any dot for full details',color:'#4b5563',font:{size:10}}},
+        y:{...CD.scales.y,ticks:{...CD.scales.y.ticks,callback:v=>'₹'+(v/100000).toFixed(1)+'L'}}
+      }
+    }
+  });
+
+  // 4. Sector bar
+  const sm={};[...WINS,...LOSSES].forEach(t=>{if(!sm[t.sec])sm[t.sec]={w:0,l:0};t.res==='WIN'?sm[t.sec].w++:sm[t.sec].l++;});
+  const srt=Object.entries(sm).sort((a,b)=>(b[1].w+b[1].l)-(a[1].w+a[1].l)).slice(0,10);
+  new Chart(document.getElementById('secChart'),{
+    type:'bar',
+    data:{labels:srt.map(([s])=>s),datasets:[
+      {label:'Wins',data:srt.map(([,d])=>d.w),backgroundColor:'rgba(34,197,94,.75)',borderRadius:4},
+      {label:'Losses',data:srt.map(([,d])=>d.l),backgroundColor:'rgba(248,113,113,.75)',borderRadius:4}
+    ]},
+    options:{...CD,indexAxis:'y',plugins:{...CD.plugins,legend:{...CD.plugins.legend,position:'top'}}}
+  });
+
+  // 5. Monthly closed count
+  const mc={};[...WINS,...LOSSES].forEach(t=>{
+    try{const dt=new Date(t.exit_str);if(!isNaN(dt)){const m=dt.toLocaleDateString('en-IN',{month:'short',year:'2-digit'});mc[m]=(mc[m]||0)+1;}}catch(e){}
+  });
+  const months=Object.keys(mc);
+  new Chart(document.getElementById('monthChart'),{
+    type:'bar',
+    data:{labels:months,datasets:[{label:'Closed',data:months.map(m=>mc[m]||0),backgroundColor:'rgba(240,192,64,.7)',borderRadius:4}]},
+    options:{...CD,plugins:{...CD.plugins,legend:{display:false}},scales:{...CD.scales,y:{...CD.scales.y,ticks:{...CD.scales.y.ticks,stepSize:1}}}}
+  });
+}
+
+// ════════ REVIEWS — Stored in localStorage (visible to all on that browser)
+// + Netlify Forms backend (visible in your Netlify dashboard for all submissions globally)
+const SEED_REVIEWS=[
+  {id:"s1",name:"Ravi K.",stars:5,text:"Followed MTAR Tech from ₹2450 — exited at T3 ₹6500. Life-changing call. The transparency here is something no other advisor does.",trade:"MTAR Tech +165%",date:"Mar 2026"},
+  {id:"s2",name:"Priya M.",stars:5,text:"Been with Piyans for 4 months. 77%+ win rate confirmed — I tracked every call personally. STL Tech +78%, JP Power +114%.",trade:"STL Tech +78%",date:"Apr 2026"},
+  {id:"s3",name:"Ankit S.",stars:5,text:"Google Sheet access is brilliant. Live prices, fully transparent. Showing losses too — that's what builds real trust with serious investors.",trade:"JP Power +114%",date:"May 2026"},
+  {id:"s4",name:"Neha R.",stars:4,text:"Great calls overall. Had 2-3 SL exits (~3-4% each) but wins more than cover it. Portfolio up 40%+ in 3 months following the 5% rule.",trade:"IREDA +60%",date:"Apr 2026"},
+  {id:"s5",name:"Vikram S.",stars:5,text:"The MTAR call alone made my year. Piyans called it at T3 target ₹6500 when everyone was skeptical. Discipline and research is visible.",trade:"MTARTECH +165%",date:"Feb 2026"},
+];
+
+let userStar=0;
+function setStar(n){
+  userStar=n;
+  document.querySelectorAll('.star').forEach((s,i)=>{s.classList.toggle('on',i<n);});
+}
+
+function loadReviews(){
+  const stored=JSON.parse(localStorage.getItem('jc_reviews')||'[]');
+  const hidden=JSON.parse(localStorage.getItem('jc_hidden')||'[]');
+  const all=[...SEED_REVIEWS,...stored].filter(r=>!hidden.includes(r.id));
+  document.getElementById('reviewsGrid').innerHTML=all.map(r=>`
+    <div class="rv-card">
+      <div class="rv-hdr">
+        <div class="rv-name">${r.name} <button class="rv-del" onclick="delReview('${r.id}')">✕ Delete</button></div>
+        <div class="rv-stars">${'⭐'.repeat(r.stars)}</div>
+      </div>
+      <div class="rv-text">"${r.text}"</div>
+      ${r.trade?`<div class="rv-trade">📈 Best call: ${r.trade}</div>`:''}
+      <div class="rv-date">${r.date}</div>
+    </div>`).join('');
+}
+
+function submitReview(){
+  const name=document.getElementById('rv-name').value.trim();
+  const text=document.getElementById('rv-text').value.trim();
+  const trade=document.getElementById('rv-trade').value.trim();
+  document.getElementById('rv-ok').style.display='none';
+  document.getElementById('rv-err').style.display='none';
+  if(!name||!text||userStar===0){document.getElementById('rv-err').style.display='block';return;}
+  const r={id:'r_'+Date.now(),name,stars:userStar,text,trade,date:new Date().toLocaleDateString('en-IN',{month:'short',year:'numeric'})};
+  const stored=JSON.parse(localStorage.getItem('jc_reviews')||'[]');
+  stored.unshift(r);
+  localStorage.setItem('jc_reviews',JSON.stringify(stored));
+  // Also submit to Netlify Forms (real backend — you see ALL submissions at netlify.com/dashboard)
+  const fd=new FormData();
+  fd.append('form-name','reviews');
+  fd.append('reviewer-name',name);
+  fd.append('rating',userStar);
+  fd.append('review',text);
+  fd.append('best-trade',trade||'');
+  fetch('/',{method:'POST',body:fd}).catch(()=>{});
+  document.getElementById('rv-ok').style.display='block';
+  document.getElementById('rv-name').value='';
+  document.getElementById('rv-text').value='';
+  document.getElementById('rv-trade').value='';
+  userStar=0;
+  document.querySelectorAll('.star').forEach(s=>s.classList.remove('on'));
+  loadReviews();
+}
+
+function delReview(id){
+  const hidden=JSON.parse(localStorage.getItem('jc_hidden')||'[]');
+  if(!hidden.includes(id))hidden.push(id);
+  localStorage.setItem('jc_hidden',JSON.stringify(hidden));
+  const stored=JSON.parse(localStorage.getItem('jc_reviews')||'[]');
+  localStorage.setItem('jc_reviews',JSON.stringify(stored.filter(r=>r.id!==id)));
+  loadReviews();showToast('Review removed',false);
+}
+
+function toggleAdminPanel(){document.getElementById('admin-panel').style.display=document.getElementById('admin-panel').style.display==='block'?'none':'block';}
+function checkAdmin(){
+  if(document.getElementById('admin-pw').value.trim()===ADMIN_PW){
+    document.body.classList.add('admin');
+    document.getElementById('admin-panel').style.display='none';
+    loadReviews();showToast('⚙️ Admin mode on — delete buttons visible',false);
+  } else {showToast('❌ Wrong admin password',true);}
+}
+
+// ════════ TOAST ════════
+function showToast(msg,isErr=false){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.className='toast '+(isErr?'err':'ok');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// ════════ REVEAL ON SCROLL ════════
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.07});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// ════════ INIT ════════
+updateStats();
+buildTicker();
+buildBlur();
+renderWins();
+renderLosses();
+buildCharts();
+loadReviews();
+</script>
+</body>
+</html>
